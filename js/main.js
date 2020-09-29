@@ -239,16 +239,48 @@
         Blog.showMobileHeaderMenu(false);
     });
     // qq and wexin
-    var faQq = document.getElementsByClassName('fa-qq')
-    var faWexin = document.getElementsByClassName('fa-weixin')
+    var faQq = document.getElementsByClassName('fa-qq')[0]
+    var faWexin = document.getElementsByClassName('fa-weixin')[0]
     var divTestQq = document.createElement('div')
-    divTestQq.innerHTML = 'QQ'
+    var divTestWexin = document.createElement('div')
+    // divTestQq.innerHTML = 'QQ'
+    faQq.style.position = 'relative'
     divTestQq.style.display = 'none'
-    divTestQq.style.width = '500px'
-    divTestQq.style.height = '500px'
+    divTestQq.style.width = '150px'
+    divTestQq.style.height = '150px'
+    divTestQq.style.position = 'absolute'
+    divTestQq.style.top = '30px'
+    divTestQq.style.left = '-48px'
+    divTestQq.style.background = 'url(/images/myQq.png) no-repeat'
+    divTestQq.style.backgroundSize = '150px 150px' 
+    divTestQq.style.zIndex = '999'
     faQq.appendChild(divTestQq)
-    faQq.onclick = function (e) {
-        e.preventDefaul()
-        divTestQq.style.display = 'block'
+    faQq.onmouseenter = function (e) {
+        e.preventDefault()
+        divTestQq.style.display = 'block'    
+    }
+    faQq.onmouseleave = function (e) {
+        e.preventDefault()
+        divTestQq.style.display = 'none'
+    }
+    // 微信
+    faWexin.style.position = 'relative'
+    divTestWexin.style.display = 'none'
+    divTestWexin.style.width = '150px'
+    divTestWexin.style.height = '150px'
+    divTestWexin.style.position = 'absolute'
+    divTestWexin.style.top = '30px'
+    divTestWexin.style.left = '-48px'
+    divTestWexin.style.background = 'url(/images/myWeixin.png) no-repeat'
+    divTestWexin.style.backgroundSize = '150px 150px' 
+    divTestWexin.style.zIndex = '999'
+    faWexin.appendChild(divTestWexin)
+    faWexin.onmouseenter = function (e) {
+        e.preventDefault()
+        divTestWexin.style.display = 'block'    
+    }
+    faWexin.onmouseleave = function (e) {
+        e.preventDefault()
+        divTestWexin.style.display = 'none'
     }
 })(window, document);
