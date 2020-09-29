@@ -111,6 +111,63 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
+    <article id="post-vue第一天" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/29/vue%E7%AC%AC%E4%B8%80%E5%A4%A9/"  >vue + element-ui实现登录与退出功能</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/vue实现登录/退出/">vue实现登录/退出</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-feed">
+            <p>
+                
+一、利用token实现登录功能&emsp;&emsp;首先了解以下基本原理：token相当于一个你登录过后，服务器端发给你的一个令牌，你可以拿着这个令牌访问其他页面，或者服务器端利用这个令牌进行路由导航守卫(登录拦截)。当你没有登录时，就是说你没有获得令牌，你访问任何页面都将被强制跳转到登录页面。
+&emsp;&emsp;那么如何保存这个token呢，这里我选择了浏览器...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2020-09-29</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/vue+ele-ui登录/退出功能/" class="color1">vue + ele-ui 登录/退出功能</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2020/09/29/vue%E7%AC%AC%E4%B8%80%E5%A4%A9/#more" class="article-more-link" >查看更多&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
     <article id="post-利用hexo框架快速建一个博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -134,36 +191,16 @@
     
     <div class="article-entry " itemprop="articleBody">
       
-            
-            <hr>
-<h4 id="一、hexo介绍"><a href="#一、hexo介绍" class="headerlink" title="一、hexo介绍"></a>一、hexo介绍</h4><p>&emsp;&emsp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<!-- 可以把内容写bash里面，每段话换行自动生成索引、背景高亮、带滚动条 -->
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更多知识可以前往hexo官网：https://hexo.io/zh-cn/docs/ 进行查看。</span><br></pre></td></tr></table></figure>
+        <div class="article-feed">
+            <p>
+                
+一、hexo介绍&emsp;&emsp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
 
-<p>&emsp;&emsp;建议有HTML、css基础知识的人体验一下Hexo,虽然它是基于node进行创建,但不需要node的相关知识,只需要下载node.js并且配置好环境变量即可下载hexo框架。很多东西只有自己亲身体验了才能感受到其强大所在和不足之处，再说体验不同的网站平台搭建本身也是一个自我学习、自我理论与实践相结合提升自身能力的好方法嘛！</p>
-<hr>
-<h4 id="二、hexo搭建静态博客网站并部署到GitHub—简易示例图"><a href="#二、hexo搭建静态博客网站并部署到GitHub—简易示例图" class="headerlink" title="二、hexo搭建静态博客网站并部署到GitHub—简易示例图"></a>二、hexo搭建静态博客网站并部署到GitHub—简易示例图</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推荐一个hexo搭建博客的哔哩哔哩视频：https://www.bilibili.com/video/BV1Yb411a7ty?t=1679</span><br></pre></td></tr></table></figure>
+1更多知识可以前往hexo官网：https://hexo.io/zh-cn/docs/ 进行查看。
 
-<p>&emsp;&emsp;注意里面的<font color=#409EFF size=4>_config.yml</font>以及<font color=#409EFF size=4>source</font>文件夹很重要，第一个用来修改hexo框架的默认配置，第二个是里面你所写的博客md文件。重新部署到GitHub时,hexo clean操作不是必要操作。<br>&emsp;&emsp;当然很多人不会选择hexo的默认主题，因此当你采用其他的主题时，注意以下几点：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修改默认配置中的主题文件夹名称</span><br><span class="line">查看主题的GitHub文档，修改配置</span><br><span class="line">根据HTML+css基础知识修改布局，做出你所希望的页面</span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;<font face="隶书" size=5>如果你了解js，那么你甚至可以修改js文件来优化你的页面，但是不建议你修改或删除原有的js代码，你需要做的是就是在他所引用的js文件中添加你的js代码，需要注意的是图片路径引入最好采用绝对路径，保证每个页面都能够准确读取到这个静态文件。</font></p>
-<!-- 图片选用款800、高350的合适，尽量不用正方形-->
-<p><img src="/images/hexo%E5%BB%BA%E7%AB%99.png"></p>
-
-            <div class="post-copyright">
-    <div class="content">
-        <p>最后更新： 2020年09月29日 11:53</p>
-        <p>原始链接： <a class="post-url" href="/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" title="利用hexo框架快速建一个博客">http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/</a></p>
-        <footer>
-            <a href="http://example.com">
-                <img src="/images/myLogo.png" alt="Zheng Hao">
-                Zheng Hao
-            </a>
-        </footer>
-    </div>
-</div>
-
+&emsp;&emsp;建议有HTML、css基础知识的人体验一下Hexo,虽然...
+            </p>
+        </div>
       
         
     </div>
@@ -247,10 +284,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a>
+            <a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA/">vue实现登录/退出</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
+            <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue-ele-ui-%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">vue + ele-ui 登录/退出功能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -283,7 +320,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
+            <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue-ele-ui-%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">vue + ele-ui 登录/退出功能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
         </div>
     </div>
 </div>
