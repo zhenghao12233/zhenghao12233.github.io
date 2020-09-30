@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue+element-ui的首页布局 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
+  
+  <meta name="description" content="一、container布局&amp;emsp;&amp;emsp;element-ui提供了container容器快速布局，原理是基于flex布局。提供的组件如下 12345el-container: 包裹容器，可以基于这个容器进行嵌套el-header：头部容器el-aside：侧边栏容器(通常给定侧边宽度值)el-main：主要区域容器el-footer：底部容器  二、ele-ui的导航菜单组件&amp;emsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue+element-ui的首页布局">
+<meta property="og:url" content="http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、container布局&amp;emsp;&amp;emsp;element-ui提供了container容器快速布局，原理是基于flex布局。提供的组件如下 12345el-container: 包裹容器，可以基于这个容器进行嵌套el-header：头部容器el-aside：侧边栏容器(通常给定侧边宽度值)el-main：主要区域容器el-footer：底部容器  二、ele-ui的导航菜单组件&amp;emsp">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-30T02:08:43.000Z">
+<meta property="article:modified_time" content="2020-09-30T07:07:13.262Z">
+<meta property="article:author" content="Zheng Hao">
+<meta property="article:tag" content="ele-ui：container布局">
+<meta property="article:tag" content="ele-ui：导航菜单">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon2.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">郑好的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>档案</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        郑好的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        对互联网充满激情
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="首页" target="_blank" href="/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/zhenghao12233">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ:1223363269" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="微信:Z19H97" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-vue-element-ui的主页布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      vue+element-ui的首页布局
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/element-ui首页布局/">element-ui首页布局</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-09-30
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <hr>
+<h4 id="一、container布局"><a href="#一、container布局" class="headerlink" title="一、container布局"></a>一、container布局</h4><p>&emsp;&emsp;element-ui提供了container容器快速布局，原理是基于flex布局。提供的组件如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">el-container: 包裹容器，可以基于这个容器进行嵌套</span><br><span class="line">el-header：头部容器</span><br><span class="line">el-aside：侧边栏容器(通常给定侧边宽度值)</span><br><span class="line">el-main：主要区域容器</span><br><span class="line">el-footer：底部容器</span><br></pre></td></tr></table></figure>
+
+<h4 id="二、ele-ui的导航菜单组件"><a href="#二、ele-ui的导航菜单组件" class="headerlink" title="二、ele-ui的导航菜单组件"></a>二、ele-ui的导航菜单组件</h4><p>&emsp;&emsp;使用组件之间需要在plugin文件夹下的element.js中对element组件进行按需导入，并且挂载。代码略…</p>
+<p>&emsp;&emsp;组件在模板中的具体使用：采用el-submenu+el + el-menu-item重复嵌套实现多级菜单。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">el-menu：为整个导航菜单添加一个容器</span><br><span class="line">el-submenu：添加一个子菜单项，基于这个实现一级菜单、二级菜单、三级菜单的嵌套</span><br><span class="line">el-submenu中的模板区域如下：i为菜单的图标,可以直接给字体图标的class类名;span为菜单名称</span><br><span class="line">&lt;template slot=<span class="string">&quot;title&quot;</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">&quot;el-icon-location&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">    &lt;span&gt;导航一&lt;/span&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">el-menu-item：子菜单下的子菜单，同样用template模板进行渲染</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-el-menu中的属性："><a href="#2-1-el-menu中的属性：" class="headerlink" title="2.1 el-menu中的属性："></a>2.1 el-menu中的属性：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">background-color：背景颜色</span><br><span class="line">text-color：文本颜色</span><br><span class="line">active-text-color：当前激活菜单的文本颜色</span><br><span class="line">unique-opened：只保持一个菜单项开启，其他折叠</span><br><span class="line">:collapse：动态绑定一个布尔值，进行点击折叠动画</span><br><span class="line">:collapse-transition：是否开启折叠动画(建议关闭，ele-ui的折叠动画很丑)</span><br><span class="line">router：为菜单开启路由模式</span><br><span class="line">:default-active：当前激活菜单的index，绑定一个路径。其实，即使不加这个属性，也能正常显示选中的item变亮，但是之所以要加这个属性，是为了浏览器刷新后，仍然可以定位到之前选中的路由。</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-el-submenu中的属性："><a href="#2-2-el-submenu中的属性：" class="headerlink" title="2.2 el-submenu中的属性："></a>2.2 el-submenu中的属性：</h5><p>&emsp;&emsp;:index属性有两个作用，一级菜单配合unique-opened，二级菜单配合router</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一级菜单绑定数据的id值，确保展开是按照自身id值进行分类展开，而不是一下全部展开，配合unique-opened保持一个菜单项开启，并且是按照分类展开</span><br><span class="line">二级菜单绑定路由路径，配合router模式实现切换</span><br></pre></td></tr></table></figure>
+
+<h4 id="三、业务逻辑的实现"><a href="#三、业务逻辑的实现" class="headerlink" title="三、业务逻辑的实现"></a>三、业务逻辑的实现</h4><h5 id="3-1-请求拦截器"><a href="#3-1-请求拦截器" class="headerlink" title="3.1 请求拦截器"></a>3.1 请求拦截器</h5><p>&emsp;&emsp;后台除了登录接口之外，都需要token权限验证，我们可以通过添加axios请求拦截器来添加token，以保证拥有获取数据的权限。在main.js中添加代码，在将axios挂载到vue原型之前添加下面的代码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 导入axios，使用axios实现ajax请求</span><br><span class="line">import axios from <span class="string">&#x27;axios&#x27;</span></span><br><span class="line">// 配置请求的根路径</span><br><span class="line">axios.defaults.baseURL = <span class="string">&#x27;http://127.0.0.1:8888/api/private/v1/&#x27;</span></span><br><span class="line">axios.interceptors.request.use(config =&gt; &#123;</span><br><span class="line">  // console.log(config)</span><br><span class="line">  // 需要授权的 API ，必须在请求头中使用 `Authorization` 字段提供 `token` 令牌</span><br><span class="line">  config.headers.Authorization = window.sessionStorage.getItem(<span class="string">&#x27;token&#x27;</span>)</span><br><span class="line">  // 最后必须<span class="built_in">return</span> config</span><br><span class="line">  <span class="built_in">return</span> config</span><br><span class="line">&#125;)</span><br><span class="line">Vue.prototype.<span class="variable">$http</span> = axios</span><br></pre></td></tr></table></figure>
+<h5 id="3-2-路由嵌套"><a href="#3-2-路由嵌套" class="headerlink" title="3.2 路由嵌套"></a>3.2 路由嵌套</h5><p>&emsp;&emsp; 子路由路由的链接路径是通过服务器数据中的路径获得的；在首页的内容主体区域放置一个路由占位符</p>
+<details>
+<summary><font size=5>router.js源代码</font></summary>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">&#x27;vue&#x27;</span></span><br><span class="line">// 1、相当于导入vue.js</span><br><span class="line">import VueRouter from <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line">// 2、相当于定义路由组件(导入路由组件)</span><br><span class="line">import Login from <span class="string">&#x27;./components/Login.vue&#x27;</span></span><br><span class="line">import Home from <span class="string">&#x27;./components/Home.vue&#x27;</span></span><br><span class="line">import Welcome from <span class="string">&#x27;./components/Welcome.vue&#x27;</span></span><br><span class="line">import Users from <span class="string">&#x27;./components/user/Users.vue&#x27;</span></span><br><span class="line">import Rights from <span class="string">&#x27;./components/power/Rights.vue&#x27;</span></span><br><span class="line">import Roles from <span class="string">&#x27;./components/power/Roles.vue&#x27;</span></span><br><span class="line">import Cate from <span class="string">&#x27;./components/goods/Cate.vue&#x27;</span></span><br><span class="line">import Params from <span class="string">&#x27;./components/goods/Params.vue&#x27;</span></span><br><span class="line"></span><br><span class="line">// 3、挂载路由对象</span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line">// 4、制定路由规则；创建路由实例对象并导入路由规则</span><br><span class="line">const routes = [</span><br><span class="line">  &#123; path: <span class="string">&#x27;/&#x27;</span>, redirect: <span class="string">&#x27;/login&#x27;</span> &#125;,</span><br><span class="line">  &#123; path: <span class="string">&#x27;/login&#x27;</span>, component: Login &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">    component: Home,</span><br><span class="line">    redirect: <span class="string">&#x27;/welcome&#x27;</span>,</span><br><span class="line">    children: [</span><br><span class="line">      &#123; path: <span class="string">&#x27;/welcome&#x27;</span>, component: Welcome &#125;,</span><br><span class="line">      &#123; path: <span class="string">&#x27;/users&#x27;</span>, component: Users &#125;,</span><br><span class="line">      &#123; path: <span class="string">&#x27;/rights&#x27;</span>, component: Rights &#125;,</span><br><span class="line">      &#123; path: <span class="string">&#x27;/roles&#x27;</span>, component: Roles &#125;,</span><br><span class="line">      &#123; path: <span class="string">&#x27;/categories&#x27;</span>, component: Cate &#125;,</span><br><span class="line">      &#123; path: <span class="string">&#x27;/params&#x27;</span>, component: Params &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 挂载路由导航守卫</span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  // to 将要访问的路径</span><br><span class="line">  // from 代表从哪个路径跳转而来</span><br><span class="line">  // next 是一个函数，表示放行</span><br><span class="line">  // next()放行    next(<span class="string">&#x27;./login) 强制跳转</span></span><br><span class="line"><span class="string">  if (to.path === &#x27;</span>/login<span class="string">&#x27;) return next()</span></span><br><span class="line"><span class="string">  // 获取token</span></span><br><span class="line"><span class="string">  const tokenStr = window.sessionStorage.getItem(&#x27;</span>token<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">  if (!tokenStr) return next(&#x27;</span>/login<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">  // 如果存在直接放行</span></span><br><span class="line"><span class="string">  next()</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default router</span></span><br></pre></td></tr></table></figure>
+</details>
+
+<hr>
+<details>
+<summary><font size=5>首页完整源代码(折叠展开)</font></summary>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-container class=<span class="string">&quot;home-container&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 头部区域 --&gt;</span><br><span class="line">    &lt;el-header&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;img src=<span class="string">&quot;../assets/heima.png&quot;</span> alt=<span class="string">&quot;&quot;</span> /&gt;</span><br><span class="line">        &lt;span&gt;后台管理系统&lt;/span&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;el-button <span class="built_in">type</span>=<span class="string">&quot;info&quot;</span> @click=<span class="string">&quot;logout&quot;</span>&gt;退出&lt;/el-button&gt;</span><br><span class="line">    &lt;/el-header&gt;</span><br><span class="line">    &lt;!-- 页面主体区域 --&gt;</span><br><span class="line">    &lt;el-container&gt;</span><br><span class="line">      &lt;!-- 侧边栏菜单区域 --&gt;</span><br><span class="line">      &lt;el-aside :width=<span class="string">&quot;isCollapse ? &#x27;64px&#x27; : &#x27;200px&#x27;&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;toggle-button&quot;</span> @click=<span class="string">&quot;toggleCollapse&quot;</span>&gt;|||&lt;/div&gt;</span><br><span class="line">        &lt;!-- 注意布尔值绑定加:才是布尔值 --&gt;</span><br><span class="line">        &lt;!-- element提供的router是否使用vue-router的模式，启用该模式会在激活导航时以 index 作为 path 进行路由跳转 --&gt;</span><br><span class="line">        &lt;!-- elementui提供的default-active当前激活菜单的 index，参数填入url地址 /users --&gt;</span><br><span class="line">        &lt;el-menu background-color=<span class="string">&quot;#333744&quot;</span> text-color=<span class="string">&quot;#fff&quot;</span> active-text-color=<span class="string">&quot;#409eff&quot;</span> :unique-opened=<span class="string">&quot;true&quot;</span> :collapse=<span class="string">&quot;isCollapse&quot;</span> :collapse-transition=<span class="string">&quot;false&quot;</span> :router=<span class="string">&quot;true&quot;</span> :default-active=<span class="string">&quot;activePath&quot;</span>&gt;</span><br><span class="line">          &lt;!-- 一级菜单 --&gt;</span><br><span class="line">          &lt;!-- 注意index绑定单独的id号,要绑定字符串，item.id是一个数值，但是绑定要字符串，因此加一个空字符串 --&gt;</span><br><span class="line">          &lt;el-submenu :index=<span class="string">&quot;item.id + &#x27;&#x27;&quot;</span> v-for=<span class="string">&quot;item in menulist&quot;</span> :key=<span class="string">&quot;item.id&quot;</span>&gt;</span><br><span class="line">            &lt;!-- 一级菜单模板区 --&gt;</span><br><span class="line">            &lt;template slot=<span class="string">&quot;title&quot;</span>&gt;</span><br><span class="line">              &lt;i :class=<span class="string">&quot;iconsObj[item.id]&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">              &lt;span&gt;&#123;&#123; item.authName &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line">            &lt;!-- 二级菜单 --&gt;</span><br><span class="line">            &lt;!-- 注意这里的命名问题，后边的循环项目选择必须用item,就是上面的item ,其实可以全部都定位item防止出错--&gt;</span><br><span class="line">            &lt;el-menu-item :index=<span class="string">&quot;&#x27;/&#x27; + subItem.path&quot;</span> v-for=<span class="string">&quot;subItem in item.children&quot;</span> :key=<span class="string">&quot;subItem.id&quot;</span> @click=<span class="string">&quot;saveNavState(&#x27;/&#x27; + subItem.path)&quot;</span>&gt;</span><br><span class="line">              &lt;!-- 二级菜单模板区 --&gt;</span><br><span class="line">              &lt;template slot=<span class="string">&quot;title&quot;</span>&gt;</span><br><span class="line">                &lt;i class=<span class="string">&quot;el-icon-menu&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123; subItem.authName &#125;&#125;&lt;/span&gt;</span><br><span class="line">              &lt;/template&gt;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-submenu&gt;</span><br><span class="line">        &lt;/el-menu&gt;</span><br><span class="line">      &lt;/el-aside&gt;</span><br><span class="line">      &lt;!-- 侧边栏主题区域 --&gt;</span><br><span class="line">      &lt;el-main&gt;</span><br><span class="line">        &lt;!-- 放置路由占位符 --&gt;</span><br><span class="line">        &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">      &lt;/el-main&gt;</span><br><span class="line">    &lt;/el-container&gt;</span><br><span class="line">  &lt;/el-container&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      menulist: [],</span><br><span class="line">      iconsObj: &#123;</span><br><span class="line">        125: <span class="string">&#x27;iconfont icon-user&#x27;</span>,</span><br><span class="line">        103: <span class="string">&#x27;iconfont icon-tijikongjian&#x27;</span>,</span><br><span class="line">        101: <span class="string">&#x27;iconfont icon-shangpin&#x27;</span>,</span><br><span class="line">        102: <span class="string">&#x27;iconfont icon-danju&#x27;</span>,</span><br><span class="line">        145: <span class="string">&#x27;iconfont icon-baobiao&#x27;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      // 是否折叠</span><br><span class="line">      isCollapse: <span class="literal">false</span>,</span><br><span class="line">      // 被激活的链接地址</span><br><span class="line">      activePath: <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  // 生命周期的第一阶段，和mounted差不多</span><br><span class="line">  <span class="function"><span class="title">created</span></span> () &#123;</span><br><span class="line">    this.getMenuList()</span><br><span class="line">    this.activePath = window.sessionStorage.getItem(<span class="string">&#x27;activePath&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">logout</span></span> () &#123;</span><br><span class="line">      window.sessionStorage.clear()</span><br><span class="line">      this.<span class="variable">$router</span>.push(<span class="string">&#x27;/login&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    async <span class="function"><span class="title">getMenuList</span></span> () &#123;</span><br><span class="line">      const &#123; data: res &#125; = await this.<span class="variable">$http</span>.get(<span class="string">&#x27;menus&#x27;</span>)</span><br><span class="line">      <span class="keyword">if</span> (res.meta.status !== 200) <span class="built_in">return</span> this.<span class="variable">$message</span>.error(res.meta.msg)</span><br><span class="line">      this.menulist = res.data</span><br><span class="line">      // console.log(res)</span><br><span class="line">    &#125;,</span><br><span class="line">    // 展开按钮实现折叠与展开</span><br><span class="line">    <span class="function"><span class="title">toggleCollapse</span></span> () &#123;</span><br><span class="line">      this.isCollapse = !this.isCollapse</span><br><span class="line">    &#125;,</span><br><span class="line">    // 保存链接的激活状态</span><br><span class="line">    saveNavState (activePath) &#123;</span><br><span class="line">      window.sessionStorage.setItem(<span class="string">&#x27;activePath&#x27;</span>, activePath)</span><br><span class="line">      this.activePath = activePath</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">&quot;less&quot;</span> scoped&gt;</span><br><span class="line">/* element提供的标签就是一个类名 */</span><br><span class="line">.home-container &#123;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.el-header &#123;</span><br><span class="line">  background-color: <span class="comment">#373d41;</span></span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">  padding-left: 0;</span><br><span class="line">  align-items: center;</span><br><span class="line">  color: <span class="comment">#fff;</span></span><br><span class="line">  font-size: 20px;</span><br><span class="line">  div &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">    span &#123;</span><br><span class="line">      margin-left: 15px;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.el-aside &#123;</span><br><span class="line">  background-color: <span class="comment">#333744;</span></span><br><span class="line">  .el-menu &#123;</span><br><span class="line">    border-right: none;</span><br><span class="line">  &#125;</span><br><span class="line">  .toggle-button &#123;</span><br><span class="line">    background: <span class="comment">#4a5064;</span></span><br><span class="line">    color: <span class="comment">#fff;</span></span><br><span class="line">    font-size: 10px;</span><br><span class="line">    line-height: 24px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    letter-spacing: 2px;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    transition: 0.5s;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">      background-color: <span class="comment">#333744;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.el-main &#123;</span><br><span class="line">  background-color: <span class="comment">#eaedf1;</span></span><br><span class="line">&#125;</span><br><span class="line">.iconfont &#123;</span><br><span class="line">  margin-right: 10px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年09月30日 15:07</p>
+        <p>原始链接： <a class="post-url" href="/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/" title="vue+element-ui的首页布局">http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/</a></p>
+        <footer>
+            <a href="http://example.com">
+                <img src="/images/myLogo.png" alt="Zheng Hao">
+                Zheng Hao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/&title=《vue+element-ui的首页布局》 — Hexo&pic=http://example.comimages/myLogo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/&title=《vue+element-ui的首页布局》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue+element-ui的首页布局》 — Hexo&url=http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/&via=http://example.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/30/vue-element-ui%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%B8%83%E5%B1%80/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/ele-ui：container布局/" class="color4">ele-ui：container布局</a>
+      
+    <a href="/tags/ele-ui：导航菜单/" class="color2">ele-ui：导航菜单</a>
+      
+    <a href="/tags/vue/" class="color4">vue</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81container%E5%B8%83%E5%B1%80"><span class="post-toc-text">一、container布局</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81ele-ui%E7%9A%84%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E7%BB%84%E4%BB%B6"><span class="post-toc-text">二、ele-ui的导航菜单组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-el-menu%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="post-toc-text">2.1 el-menu中的属性：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-el-submenu%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="post-toc-text">2.2 el-submenu中的属性：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">三、业务逻辑的实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-1-%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="post-toc-text">3.1 请求拦截器</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-2-%E8%B7%AF%E7%94%B1%E5%B5%8C%E5%A5%97"><span class="post-toc-text">3.2 路由嵌套</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/29/vue%E7%AC%AC%E4%B8%80%E5%A4%A9/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">vue + element-ui实现登录与退出功能</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Zheng Hao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://example.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Ajax%E4%B8%8EFormData%E5%AF%B9%E8%B1%A1/">Ajax与FormData对象</a><a class="category-link" href="/categories/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">Ajax与客户端模板引擎</a><a class="category-link" href="/categories/Ajax%E5%9F%BA%E7%A1%80/">Ajax基础</a><a class="category-link" href="/categories/element-ui%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80/">element-ui首页布局</a><a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA/">vue实现登录/退出</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/ele-ui%EF%BC%9Acontainer%E5%B8%83%E5%B1%80/" style="font-size: 10px;">ele-ui：container布局</a> <a href="/tags/ele-ui%EF%BC%9A%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/" style="font-size: 10px;">ele-ui：导航菜单</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/vue-ele-ui-%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">vue + ele-ui 登录/退出功能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>档案</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/ele-ui%EF%BC%9Acontainer%E5%B8%83%E5%B1%80/" style="font-size: 10px;">ele-ui：container布局</a> <a href="/tags/ele-ui%EF%BC%9A%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/" style="font-size: 10px;">ele-ui：导航菜单</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/vue-ele-ui-%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">vue + ele-ui 登录/退出功能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

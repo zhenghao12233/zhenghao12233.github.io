@@ -3,26 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>利用hexo框架快速建一个博客 | Hexo</title>
+  <title>Ajax配合客户端模板引擎 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
   
-  <meta name="description" content="一、hexo介绍&amp;emsp;&amp;emsp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  1更多知识可以前往hexo官网：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F; 进行查看。  &amp;emsp;&amp;emsp;建议有HTML、css基础知识的人体验一下Hexo,虽然它是基于node进行创建,">
+  <meta name="description" content="一、客户端模板引擎简介&amp;emsp;&amp;emsp;服务器端将模板和数据分别传送到客户端，在客户端由js渲染出最终的HTML视图。自从有了ajax，用户交互部分直接可以用过ajax请求传回的数据在客户端做渲染，不用每次都请求服务端模版，所以客户端模版引擎的使用开始变得频繁。  二、客户端模板引擎的使用2.1 模板引擎的使用&amp;emsp;&amp;emsp;1、引入js库文件 1&lt;script src&#x3D;&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用hexo框架快速建一个博客">
-<meta property="og:url" content="http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="Ajax配合客户端模板引擎">
+<meta property="og:url" content="http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、hexo介绍&amp;emsp;&amp;emsp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  1更多知识可以前往hexo官网：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F; 进行查看。  &amp;emsp;&amp;emsp;建议有HTML、css基础知识的人体验一下Hexo,虽然它是基于node进行创建,">
+<meta property="og:description" content="一、客户端模板引擎简介&amp;emsp;&amp;emsp;服务器端将模板和数据分别传送到客户端，在客户端由js渲染出最终的HTML视图。自从有了ajax，用户交互部分直接可以用过ajax请求传回的数据在客户端做渲染，不用每次都请求服务端模版，所以客户端模版引擎的使用开始变得频繁。  二、客户端模板引擎的使用2.1 模板引擎的使用&amp;emsp;&amp;emsp;1、引入js库文件 1&lt;script src&#x3D;&amp;q">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/hexo%E5%BB%BA%E7%AB%99.png">
-<meta property="article:published_time" content="2020-09-28T12:39:04.000Z">
-<meta property="article:modified_time" content="2020-09-29T03:53:27.675Z">
+<meta property="article:published_time" content="2020-09-28T12:41:04.000Z">
+<meta property="article:modified_time" content="2020-09-30T09:37:27.444Z">
 <meta property="article:author" content="Zheng Hao">
-<meta property="article:tag" content="hexo框架">
-<meta property="article:tag" content="博客主题设置">
+<meta property="article:tag" content="Ajax">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/hexo%E5%BB%BA%E7%AB%99.png">
   
   
     <link rel="icon" href="/favicon2.ico">
@@ -117,14 +114,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-利用hexo框架快速建一个博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-Ajax与客户端模板变量" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      利用hexo框架快速建一个博客
+      Ajax配合客户端模板引擎
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -132,7 +129,7 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/hexo框架快速创建个人博客/">hexo框架快速创建个人博客</a>
+                      <a href="/categories/Ajax与客户端模板引擎/">Ajax与客户端模板引擎</a>
                   
               </li>
           
@@ -154,25 +151,29 @@
       
             
             <hr>
-<h4 id="一、hexo介绍"><a href="#一、hexo介绍" class="headerlink" title="一、hexo介绍"></a>一、hexo介绍</h4><p>&emsp;&emsp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<!-- 可以把内容写bash里面，每段话换行自动生成索引、背景高亮、带滚动条 -->
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更多知识可以前往hexo官网：https://hexo.io/zh-cn/docs/ 进行查看。</span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;建议有HTML、css基础知识的人体验一下Hexo,虽然它是基于node进行创建,但不需要node的相关知识,只需要下载node.js并且配置好环境变量即可下载hexo框架。很多东西只有自己亲身体验了才能感受到其强大所在和不足之处，再说体验不同的网站平台搭建本身也是一个自我学习、自我理论与实践相结合提升自身能力的好方法嘛！</p>
+<h4 id="一、客户端模板引擎简介"><a href="#一、客户端模板引擎简介" class="headerlink" title="一、客户端模板引擎简介"></a>一、客户端模板引擎简介</h4><p>&emsp;&emsp;服务器端将模板和数据分别传送到客户端，在客户端由js渲染出最终的HTML视图。自从有了ajax，用户交互部分直接可以用过ajax请求传回的数据在客户端做渲染，不用每次都请求服务端模版，所以客户端模版引擎的使用开始变得频繁。</p>
 <hr>
-<h4 id="二、hexo搭建静态博客网站并部署到GitHub—简易示例图"><a href="#二、hexo搭建静态博客网站并部署到GitHub—简易示例图" class="headerlink" title="二、hexo搭建静态博客网站并部署到GitHub—简易示例图"></a>二、hexo搭建静态博客网站并部署到GitHub—简易示例图</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推荐一个hexo搭建博客的哔哩哔哩视频：https://www.bilibili.com/video/BV1Yb411a7ty?t=1679</span><br></pre></td></tr></table></figure>
+<h4 id="二、客户端模板引擎的使用"><a href="#二、客户端模板引擎的使用" class="headerlink" title="二、客户端模板引擎的使用"></a>二、客户端模板引擎的使用</h4><h5 id="2-1-模板引擎的使用"><a href="#2-1-模板引擎的使用" class="headerlink" title="2.1 模板引擎的使用"></a>2.1 模板引擎的使用</h5><p>&emsp;&emsp;1、引入js库文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;template-web.js&quot;</span>&gt;&lt;/script&gt; </span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;2、准备模板</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">&quot;text/html&quot;</span> id=<span class="string">&quot;tpl&quot;</span>&gt;          </span><br><span class="line">    &lt;h1&gt;&#123;&#123;username + <span class="string">&#x27;:&#x27;</span> + age&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;3、告诉模板引擎将哪个模板和哪个数据进行拼接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var html = template(<span class="string">&#x27;tpl&#x27;</span>,&#123;username:<span class="string">&#x27;zhengsan&#x27;</span>,age:30&#125;);</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;4、将数据响应回准备好的模板，展示在页面中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doucumnet.body.innerHTML = html;</span><br></pre></td></tr></table></figure>
+<h4 id="三、自定义模板变量"><a href="#三、自定义模板变量" class="headerlink" title="三、自定义模板变量"></a>三、自定义模板变量</h4><p>&emsp;&emsp;1、封装一个函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> dateFormat(date) &#123;</span><br><span class="line">    <span class="built_in">return</span> date.getFullYear() + <span class="string">&#x27;年&#x27;</span> + (date.getMonth() + 1) + <span class="string">&#x27;月&#x27;</span> + date.getDate() + <span class="string">&#x27;日&#x27;</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;2、将这个函数变为一个模板变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template.defaults.imports.dateFormat = dateFormat;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;然后模板中就可以调用这个方法进行日期的格式处理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;dateFormate(传过来的时间)&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;注意里面的<font color=#409EFF size=4>_config.yml</font>以及<font color=#409EFF size=4>source</font>文件夹很重要，第一个用来修改hexo框架的默认配置，第二个是里面你所写的博客md文件。重新部署到GitHub时,hexo clean操作不是必要操作。<br>&emsp;&emsp;当然很多人不会选择hexo的默认主题，因此当你采用其他的主题时，注意以下几点：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修改默认配置中的主题文件夹名称</span><br><span class="line">查看主题的GitHub文档，修改配置</span><br><span class="line">根据HTML+css基础知识修改布局，做出你所希望的页面</span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;<font face="隶书" size=5>如果你了解js，那么你甚至可以修改js文件来优化你的页面，但是不建议你修改或删除原有的js代码，你需要做的是就是在他所引用的js文件中添加你的js代码，需要注意的是图片路径引入最好采用绝对路径，保证每个页面都能够准确读取到这个静态文件。</font></p>
-<!-- 图片选用款800、高350的合适，尽量不用正方形-->
-<p><img src="/images/hexo%E5%BB%BA%E7%AB%99.png"></p>
+<p>案例：验证邮箱/电话号码等唯一性 ； 搜索框内容自动提示 ； 省市区联动</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年09月29日 11:53</p>
-        <p>原始链接： <a class="post-url" href="/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" title="利用hexo框架快速建一个博客">http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/</a></p>
+        <p>最后更新： 2020年09月30日 17:37</p>
+        <p>原始链接： <a class="post-url" href="/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/" title="Ajax配合客户端模板引擎">http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/</a></p>
         <footer>
             <a href="http://example.com">
                 <img src="/images/myLogo.png" alt="Zheng Hao">
@@ -229,7 +230,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/&title=《利用hexo框架快速建一个博客》 — Hexo&pic=/images/hexo建站.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/&title=《Ajax配合客户端模板引擎》 — Hexo&pic=http://example.comimages/myLogo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -239,22 +240,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/&title=《利用hexo框架快速建一个博客》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/&title=《Ajax配合客户端模板引擎》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《利用hexo框架快速建一个博客》 — Hexo&url=http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/&via=http://example.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ajax配合客户端模板引擎》 — Hexo&url=http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/&via=http://example.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -264,7 +265,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/28/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -276,9 +277,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/hexo框架/" class="color2">hexo框架</a>
-      
-    <a href="/tags/博客主题设置/" class="color2">博客主题设置</a>
+    <a href="/tags/Ajax/" class="color5">Ajax</a>
       
   </li>
 
@@ -291,23 +290,28 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81hexo%E4%BB%8B%E7%BB%8D"><span class="post-toc-text">一、hexo介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E2%80%94%E7%AE%80%E6%98%93%E7%A4%BA%E4%BE%8B%E5%9B%BE"><span class="post-toc-text">二、hexo搭建静态博客网站并部署到GitHub—简易示例图</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%E7%AE%80%E4%BB%8B"><span class="post-toc-text">一、客户端模板引擎简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="post-toc-text">二、客户端模板引擎的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="post-toc-text">2.1 模板引擎的使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F"><span class="post-toc-text">三、自定义模板变量</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2020/09/28/Ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/28/Ajax%E4%B8%8EFormData/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          Ajax技术实现局部刷新技术
+          Ajax与FormData对象
         
       </span>
     </a>
   
+  
+    <a href="/2020/09/28/Ajax/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Ajax技术实现局部刷新技术</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
   
 </nav>
 
