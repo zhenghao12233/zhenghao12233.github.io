@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CORS跨域资源共享---第二种跨域获取数据的方式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
+  
+  <meta name="description" content="一、CORS跨域简介&amp;emsp;&amp;emsp;它允许浏览器向跨域服务器发送Ajax请求，克服了Ajax同源限制。 二、CORS跨域请求实现步骤2.1 方法11234567ajax(&amp;#123;	type: &amp;#x27;get&amp;#x27;,	url: &amp;#x27;http:&#x2F;&#x2F;localhost:3001&#x2F;cross&amp;#x27;,	success: function (data) &amp;#123;		c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CORS跨域资源共享---第二种跨域获取数据的方式">
+<meta property="og:url" content="http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、CORS跨域简介&amp;emsp;&amp;emsp;它允许浏览器向跨域服务器发送Ajax请求，克服了Ajax同源限制。 二、CORS跨域请求实现步骤2.1 方法11234567ajax(&amp;#123;	type: &amp;#x27;get&amp;#x27;,	url: &amp;#x27;http:&#x2F;&#x2F;localhost:3001&#x2F;cross&amp;#x27;,	success: function (data) &amp;#123;		c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-28T12:44:04.000Z">
+<meta property="article:modified_time" content="2020-10-01T02:55:09.468Z">
+<meta property="article:author" content="Zheng Hao">
+<meta property="article:tag" content="CORS跨域">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon2.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">郑好的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>档案</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        郑好的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        对互联网充满激情
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="首页" target="_blank" href="/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/zhenghao12233">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ:1223363269" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="微信:Z19H97" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-CORS跨域资源共享" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      CORS跨域资源共享---第二种跨域获取数据的方式
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/CORS跨域/">CORS跨域</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-09-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <hr>
+<h4 id="一、CORS跨域简介"><a href="#一、CORS跨域简介" class="headerlink" title="一、CORS跨域简介"></a>一、CORS跨域简介</h4><p>&emsp;&emsp;它允许浏览器向跨域服务器发送Ajax请求，克服了Ajax同源限制。</p>
+<h4 id="二、CORS跨域请求实现步骤"><a href="#二、CORS跨域请求实现步骤" class="headerlink" title="二、CORS跨域请求实现步骤"></a>二、CORS跨域请求实现步骤</h4><h5 id="2-1-方法1"><a href="#2-1-方法1" class="headerlink" title="2.1 方法1"></a>2.1 方法1</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ajax(&#123;</span><br><span class="line">	<span class="built_in">type</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">	url: <span class="string">&#x27;http://localhost:3001/cross&#x27;</span>,</span><br><span class="line">	success: <span class="keyword">function</span> (data) &#123;</span><br><span class="line">		console.log(data)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">app.use((req, res, next) =&gt; &#123;</span><br><span class="line">	// 1.允许哪些客户端访问我</span><br><span class="line">	// * 代表允许所有的客户端访问我</span><br><span class="line">	// 注意：如果跨域请求中涉及到cookie信息传递，值不可以为*号 比如是具体的域名信息</span><br><span class="line">	res.header(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;http://localhost:3000&#x27;</span>)</span><br><span class="line">	// 2.允许客户端使用哪些请求方法访问我</span><br><span class="line">	res.header(<span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span>, <span class="string">&#x27;get,post&#x27;</span>)</span><br><span class="line">	// 允许客户端发送跨域请求时携带cookie信息</span><br><span class="line">	res.header(<span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">	next();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/cross&#x27;</span>, (req, res) =&gt; &#123;</span><br><span class="line">	res.send(<span class="string">&#x27;ok&#x27;</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-方法2"><a href="#2-2-方法2" class="headerlink" title="2.2 方法2"></a>2.2 方法2</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//Ajax访问本地服务器</span><br><span class="line">ajax(&#123;</span><br><span class="line">	<span class="built_in">type</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">	url: <span class="string">&#x27;http://localhost:3000/server&#x27;</span>,</span><br><span class="line">	success: <span class="keyword">function</span> (data) &#123;</span><br><span class="line">		console.log(data);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 3000端口下向其他服务器端请求数据的模块</span><br><span class="line">const request = require(<span class="string">&#x27;request&#x27;</span>);</span><br><span class="line">...</span><br><span class="line">app.get(<span class="string">&#x27;/server&#x27;</span>, (req, res) =&gt; &#123;</span><br><span class="line">	request(<span class="string">&#x27;http://localhost:3001/cross&#x27;</span>, (err, response, body) =&gt; &#123;</span><br><span class="line">		res.send(body);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//3001端口下：</span><br><span class="line">app.get(<span class="string">&#x27;/cross&#x27;</span>, (req, res) =&gt; &#123;</span><br><span class="line">	res.send(<span class="string">&#x27;ok&#x27;</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>案例：模拟跨域登录功能<br>&emsp;&emsp;在使用Ajax发送跨域请求时，默认情况下不会再请求中携带cookie信息，所以在发送请求时设置携带cookie信息。</p>
+<details>
+<summary><font size=4 color=#409EFF>展开客户端部分代码</font></summary>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// 获取登录按钮</span><br><span class="line">var loginBtn = document.getElementById(<span class="string">&#x27;loginBtn&#x27;</span>);</span><br><span class="line">// 获取检测登录状态按钮</span><br><span class="line">var checkLogin = document.getElementById(<span class="string">&#x27;checkLogin&#x27;</span>);</span><br><span class="line">// 获取登录表单</span><br><span class="line">var loginForm = document.getElementById(<span class="string">&#x27;loginForm&#x27;</span>);</span><br><span class="line">// 为登录按钮添加点击事件</span><br><span class="line">loginBtn.onclick = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	// 将html表单转换为formData表单对象</span><br><span class="line">	var formData = new FormData(loginForm);</span><br><span class="line">	// 创建ajax对象</span><br><span class="line">	var xhr = new XMLHttpRequest();</span><br><span class="line">	// 对ajax对象进行配置</span><br><span class="line">	xhr.open(<span class="string">&#x27;post&#x27;</span>, <span class="string">&#x27;http://localhost:3001/login&#x27;</span>);</span><br><span class="line">	// 当发送跨域请求时，携带cookie信息</span><br><span class="line">	xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line">	// 发送请求并传递请求参数</span><br><span class="line">	xhr.send(formData);</span><br><span class="line">	// 监听服务器端给予的响应内容</span><br><span class="line">	xhr.onload = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">		console.log(xhr.responseText);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 当检测用户状态按钮被点击时</span><br><span class="line">checkLogin.onclick = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	// 创建ajax对象</span><br><span class="line">	var xhr = new XMLHttpRequest();</span><br><span class="line">	// 对ajax对象进行配置</span><br><span class="line">	xhr.open(<span class="string">&#x27;get&#x27;</span>, <span class="string">&#x27;http://localhost:3001/checkLogin&#x27;</span>);</span><br><span class="line">	// 当发送跨域请求时，携带cookie信息</span><br><span class="line">	xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line">	// 发送请求并传递请求参数</span><br><span class="line">	xhr.send();</span><br><span class="line">	// 监听服务器端给予的响应内容</span><br><span class="line">	xhr.onload = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">		console.log(xhr.responseText);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+<summary><font size=4 color=#409EFF>展开服务端部分代码</font></summary>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// 拦截所有请求</span><br><span class="line">app.use((req, res, next) =&gt; &#123;</span><br><span class="line">	// 1.允许哪些客户端访问我</span><br><span class="line">	// * 代表允许所有的客户端访问我</span><br><span class="line">	// 注意：如果跨域请求中涉及到cookie信息传递，值不可以为*号 比如是具体的域名信息</span><br><span class="line">	res.header(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;http://localhost:3000&#x27;</span>)</span><br><span class="line">	// 2.允许客户端使用哪些请求方法访问我</span><br><span class="line">	res.header(<span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span>, <span class="string">&#x27;get,post&#x27;</span>)</span><br><span class="line">	// 允许客户端发送跨域请求时携带cookie信息</span><br><span class="line">	res.header(<span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">	next();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">&#x27;/login&#x27;</span>, (req, res) =&gt; &#123;</span><br><span class="line">	// 创建表单解析对象</span><br><span class="line">	var form = formidable.IncomingForm();</span><br><span class="line">	// 解析表单</span><br><span class="line">	form.parse(req, (err, fields, file) =&gt; &#123;</span><br><span class="line">		// 接收客户端传递过来的用户名和密码</span><br><span class="line">		const &#123; username, password &#125; = fields;</span><br><span class="line">		// 用户名密码比对</span><br><span class="line">		<span class="keyword">if</span> (username == <span class="string">&#x27;itheima&#x27;</span> &amp;&amp; password == <span class="string">&#x27;123456&#x27;</span>) &#123;</span><br><span class="line">			// 设置session</span><br><span class="line">			req.session.isLogin = <span class="literal">true</span>;</span><br><span class="line">			res.send(&#123;message: <span class="string">&#x27;登录成功&#x27;</span>&#125;);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			res.send(&#123;message: <span class="string">&#x27;登录失败, 用户名或密码错误&#x27;</span>&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/checkLogin&#x27;</span>, (req, res) =&gt; &#123;</span><br><span class="line">	// 判断用户是否处于登录状态</span><br><span class="line">	<span class="keyword">if</span> (req.session.isLogin) &#123;</span><br><span class="line">		res.send(&#123;message: <span class="string">&#x27;处于登录状态&#x27;</span>&#125;)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		res.send(&#123;message: <span class="string">&#x27;处于未登录状态&#x27;</span>&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</details>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年10月01日 10:55</p>
+        <p>原始链接： <a class="post-url" href="/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/" title="CORS跨域资源共享---第二种跨域获取数据的方式">http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/</a></p>
+        <footer>
+            <a href="http://example.com">
+                <img src="/images/myLogo.png" alt="Zheng Hao">
+                Zheng Hao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/&title=《CORS跨域资源共享---第二种跨域获取数据的方式》 — Hexo&pic=http://example.comimages/myLogo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/&title=《CORS跨域资源共享---第二种跨域获取数据的方式》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CORS跨域资源共享---第二种跨域获取数据的方式》 — Hexo&url=http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/&via=http://example.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/28/CORS%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/CORS跨域/" class="color2">CORS跨域</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81CORS%E8%B7%A8%E5%9F%9F%E7%AE%80%E4%BB%8B"><span class="post-toc-text">一、CORS跨域简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81CORS%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="post-toc-text">二、CORS跨域请求实现步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-%E6%96%B9%E6%B3%951"><span class="post-toc-text">2.1 方法1</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-%E6%96%B9%E6%B3%952"><span class="post-toc-text">2.2 方法2</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/09/29/vue%E7%AC%AC%E4%B8%80%E5%A4%A9/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          vue + element-ui实现登录与退出功能
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/09/28/JSONP%E8%AF%B7%E6%B1%82/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JSONP请求解决同源限制</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Zheng Hao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://example.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Ajax%E4%B8%8EFormData%E5%AF%B9%E8%B1%A1/">Ajax与FormData对象</a><a class="category-link" href="/categories/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">Ajax与客户端模板引擎</a><a class="category-link" href="/categories/Ajax%E5%9F%BA%E7%A1%80/">Ajax基础</a><a class="category-link" href="/categories/CORS%E8%B7%A8%E5%9F%9F/">CORS跨域</a><a class="category-link" href="/categories/JSONP%E8%AF%B7%E6%B1%82/">JSONP请求</a><a class="category-link" href="/categories/element-ui%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80/">element-ui首页布局</a><a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA/">vue实现登录/退出</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/ele-ui%EF%BC%9Acontainer%E5%B8%83%E5%B1%80/" style="font-size: 10px;">ele-ui：container布局</a> <a href="/tags/ele-ui%EF%BC%9A%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/" style="font-size: 10px;">ele-ui：导航菜单</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/vue-ele-ui-%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">vue + ele-ui 登录/退出功能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>档案</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/ele-ui%EF%BC%9Acontainer%E5%B8%83%E5%B1%80/" style="font-size: 10px;">ele-ui：container布局</a> <a href="/tags/ele-ui%EF%BC%9A%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/" style="font-size: 10px;">ele-ui：导航菜单</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/vue-ele-ui-%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">vue + ele-ui 登录/退出功能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/" style="font-size: 10px;">博客主题设置</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
