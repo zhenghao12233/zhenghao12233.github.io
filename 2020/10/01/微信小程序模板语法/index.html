@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>微信小程序的模板语法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
+  
+  <meta name="description" content="&amp;emsp;&amp;emsp;对于有基础的来说，这里的模板语法学起来也比较轻松，它和常见的客户端模板、服务端模板虽然有点不一样，但是也有很大相通性。如果你有vue的基础知识，会发现微信小程序的模板语法与vue非常相同，但也有各自的不同点。 一、模板语法基础&amp;emsp;&amp;emsp;首先先介绍几个微信的wxml标签 123text 相当于以前web中的span标签 view 相当于div标签checkbo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序的模板语法">
+<meta property="og:url" content="http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;对于有基础的来说，这里的模板语法学起来也比较轻松，它和常见的客户端模板、服务端模板虽然有点不一样，但是也有很大相通性。如果你有vue的基础知识，会发现微信小程序的模板语法与vue非常相同，但也有各自的不同点。 一、模板语法基础&amp;emsp;&amp;emsp;首先先介绍几个微信的wxml标签 123text 相当于以前web中的span标签 view 相当于div标签checkbo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-01T13:01:04.000Z">
+<meta property="article:modified_time" content="2020-10-01T14:20:58.255Z">
+<meta property="article:author" content="Zheng Hao">
+<meta property="article:tag" content="微信小程序">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon2.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">郑好的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>档案</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        郑好的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        对互联网充满激情
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="首页" target="_blank" href="/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/zhenghao12233">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ:1223363269" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="微信:Z19H97" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-微信小程序模板语法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      微信小程序的模板语法
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/微信小程序的模板语法/">微信小程序的模板语法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-10-01
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <hr>
+<p>&emsp;&emsp;对于有基础的来说，这里的模板语法学起来也比较轻松，它和常见的客户端模板、服务端模板虽然有点不一样，但是也有很大相通性。如果你有vue的基础知识，会发现微信小程序的模板语法与vue非常相同，但也有各自的不同点。</p>
+<h4 id="一、模板语法基础"><a href="#一、模板语法基础" class="headerlink" title="一、模板语法基础"></a>一、模板语法基础</h4><p>&emsp;&emsp;首先先介绍几个微信的wxml标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text 相当于以前web中的span标签 </span><br><span class="line">view 相当于div标签</span><br><span class="line">checkbox 就是以前的复选框</span><br></pre></td></tr></table></figure>
+<h5 id="1-1-js文件"><a href="#1-1-js文件" class="headerlink" title="1.1 js文件"></a>1.1 js文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  data: &#123;</span><br><span class="line">    /* 冒号后面不能有空格 */</span><br><span class="line">    msg:<span class="string">&#x27;hello weixin&#x27;</span>,</span><br><span class="line">    num:10000,</span><br><span class="line">    isGirl:<span class="literal">false</span>,</span><br><span class="line">    person:&#123;</span><br><span class="line">      age:23,</span><br><span class="line">      height:172,</span><br><span class="line">      weight:116,</span><br><span class="line">      name:<span class="string">&#x27;zhenghao&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    isChecked:<span class="literal">false</span>,</span><br><span class="line">    list:[</span><br><span class="line">      &#123;</span><br><span class="line">        id:0,</span><br><span class="line">        name:<span class="string">&#x27;猪八戒&#x27;</span></span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:1,</span><br><span class="line">        name:<span class="string">&#x27;天蓬元帅&#x27;</span></span><br><span class="line">      &#125;,&#123;</span><br><span class="line">        id:2,</span><br><span class="line">        name:<span class="string">&#x27;悟能&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;,</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-wxml文件"><a href="#1-2-wxml文件" class="headerlink" title="1.2 wxml文件"></a>1.2 wxml文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt; &#123;&#123; msg &#125;&#125; &lt;/view&gt;</span><br><span class="line">&lt;view&gt;&#123;&#123;num&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;view&gt;是否：&#123;&#123;isGirl&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;view&gt;&#123;&#123;person.name + <span class="string">&#x27;的年龄是&#x27;</span> +person.age + <span class="string">&#x27;，&#x27;</span> + <span class="string">&#x27;身高为：&#x27;</span> + person.height + <span class="string">&#x27;体重为：&#x27;</span> + person.weight&#125;&#125;&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;view data-num=<span class="string">&quot;&#123;&#123;num&#125;&#125;&quot;</span>&gt;</span><br><span class="line">    自定义属性</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="string">&quot;&#123;&#123;&#125;&#125;&quot;</span> 不能有空格，比如 <span class="string">&quot; &#123;&#123;&#125;&#125;&quot;</span>前面有空格就识别出错 --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">    &lt;checkbox checked=<span class="string">&quot;&#123;&#123;isChecked&#125;&#125;&quot;</span> color=<span class="string">&quot;&quot;</span>&gt;&lt;/checkbox&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 表达式部分,数学运算、字符串拼接、逻辑运算 --&gt;</span><br><span class="line">&lt;view&gt;&#123;&#123;1+1&#125;&#125;&lt;/view&gt;    &lt;!-- 数学运算 --&gt;</span><br><span class="line">&lt;view&gt;&#123;&#123;1+<span class="string">&#x27;1&#x27;</span>&#125;&#125;&lt;/view&gt;  &lt;!-- 字符串拼接 --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">    &#123;&#123; 1 + 1 === 2 ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span> &#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="二、循环语句"><a href="#二、循环语句" class="headerlink" title="二、循环语句"></a>二、循环语句</h4><p>1、 wx:for 循环的对象(数组或对象格式)<br>&emsp;&emsp;wx:for-item=”item”      循环项<br>&emsp;&emsp;wx:for-index=”index”    索引，从0开始<br>&emsp;&emsp;wx:key=”id”             绑定唯一值的属性名，加快进程<br>&emsp;&emsp;如果是一个普通的纯数组形式采用 wx:key=”*this”</p>
+<p>2、 数组出现循环嵌套不要重名，wx:for-item=”item” wx:for-index=”index”</p>
+<p>3、  只有一层循环的时候，不用区分名称，所以可以直接省略<br>&emsp;&emsp;因为小程序默认的循环项和索引的名称是item和index，并且默认添加上</p>
+<p>4、 对象循环:为了防止混淆，区别数组的索引，所以可以改下名：<br>&emsp;&emsp;wx:for-item=”属性值” wx:for-index=”属性名”<br>&emsp;&emsp;wx:for-item=”value” wx:for-index=”key”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;</span><br><span class="line">    &lt;!-- wx:key绑定一个唯一值，注意这里与vue的区别,vue中是v-for=<span class="string">&quot;(item,index) in list&quot;</span> :key=<span class="string">&quot;item.id&quot;</span> --&gt;</span><br><span class="line">    &lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123; list &#125;&#125;&quot;</span> wx:for-item=<span class="string">&quot;item&quot;</span> wx:for-index=<span class="string">&quot;index&quot;</span> wx:key=<span class="string">&quot;id&quot;</span>&gt;</span><br><span class="line">        索引: &#123;&#123;index&#125;&#125;----&#123;&#123;item.name&#125;&#125;  or  &#123;&#123;item.id&#125;&#125;-----&#123;&#123;item.name&#125;&#125;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;view&gt;</span><br><span class="line">    &lt;!-- 这里的wx：key消除警告，对进程影响不大 --&gt;</span><br><span class="line">    &lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123; person &#125;&#125;&quot;</span> wx:for-item=<span class="string">&quot;value&quot;</span> wx:for-index=<span class="string">&quot;key&quot;</span> wx:key=<span class="string">&quot;age&quot;</span>&gt;</span><br><span class="line">        &#123;&#123;key&#125;&#125;----&#123;&#123;value&#125;&#125;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="三、block标签"><a href="#三、block标签" class="headerlink" title="三、block标签"></a>三、block标签</h4><p>&emsp;&emsp;1、占位符标签<br>&emsp;&emsp;2、页面渲染时，小程序会把他移除掉</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123; list &#125;&#125;&quot;</span> wx:for-item=<span class="string">&quot;item&quot;</span> wx:for-index=<span class="string">&quot;index&quot;</span> wx:key=<span class="string">&quot;id&quot;</span> class=<span class="string">&quot;myList&quot;</span>&gt;</span><br><span class="line">      索引: &#123;&#123;index&#125;&#125;----&#123;&#123;item.name&#125;&#125;  or  &#123;&#123;item.id&#125;&#125;-----&#123;&#123;item.name&#125;&#125;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="四、条件判断语句"><a href="#四、条件判断语句" class="headerlink" title="四、条件判断语句"></a>四、条件判断语句</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;true/false&#125;&#125;&quot;</span> </span><br><span class="line"><span class="keyword">if</span>， <span class="keyword">else</span> <span class="keyword">if</span> ， <span class="keyword">else</span> </span><br><span class="line">hidden: hidden就如同vue中的v-show----反着来 </span><br><span class="line">    直接加入属性hidden</span><br><span class="line">    hidden = <span class="string">&quot;&#123;&#123;true&#125;&#125;&quot;</span> <span class="literal">true</span>隐藏、<span class="literal">false</span>消失</span><br><span class="line">    hidden相当于给display：none，元素还是存在的，单独添加行内样式display会覆盖none；<span class="keyword">if</span>语句元素是不存在的；</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;</span><br><span class="line">    &lt;view&gt;条件渲染&lt;/view&gt;</span><br><span class="line">    &lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;true&#125;&#125;&quot;</span>&gt;显示&lt;/view&gt;</span><br><span class="line">    &lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt;隐藏&lt;/view&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt;1&lt;/view&gt;</span><br><span class="line">    &lt;view wx:<span class="keyword">elif</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt;2&lt;/view&gt;</span><br><span class="line">    &lt;view wx:<span class="keyword">else</span>&gt;3&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">    &lt;view hidden&gt;hidden&lt;/view&gt;</span><br><span class="line">    &lt;view hidden=<span class="string">&quot;&#123;&#123;true&#125;&#125;&quot;</span>&gt;hidden2&lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年10月01日 22:20</p>
+        <p>原始链接： <a class="post-url" href="/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" title="微信小程序的模板语法">http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</a></p>
+        <footer>
+            <a href="http://example.com">
+                <img src="/images/myLogo.png" alt="Zheng Hao">
+                Zheng Hao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/&title=《微信小程序的模板语法》 — Hexo&pic=http://example.comimages/myLogo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/&title=《微信小程序的模板语法》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序的模板语法》 — Hexo&url=http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/&via=http://example.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/微信小程序/" class="color1">微信小程序</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80"><span class="post-toc-text">一、模板语法基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-1-js%E6%96%87%E4%BB%B6"><span class="post-toc-text">1.1 js文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-2-wxml%E6%96%87%E4%BB%B6"><span class="post-toc-text">1.2 wxml文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="post-toc-text">二、循环语句</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81block%E6%A0%87%E7%AD%BE"><span class="post-toc-text">三、block标签</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="post-toc-text">四、条件判断语句</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">微信小程序初识</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Zheng Hao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://example.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Ajax%E4%B8%8EFormData%E5%AF%B9%E8%B1%A1/">Ajax与FormData对象</a><a class="category-link" href="/categories/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">Ajax与客户端模板引擎</a><a class="category-link" href="/categories/Ajax%E5%9F%BA%E7%A1%80/">Ajax基础</a><a class="category-link" href="/categories/CORS%E8%B7%A8%E5%9F%9F/">CORS跨域</a><a class="category-link" href="/categories/JSONP%E8%AF%B7%E6%B1%82/">JSONP请求</a><a class="category-link" href="/categories/element-ui%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8/">element-ui用户列表</a><a class="category-link" href="/categories/element-ui%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80-container%E3%80%81%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/">element-ui首页布局(container、导航菜单)</a><a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA-form%E8%A1%A8%E5%8D%95%E3%80%81%E6%B6%88%E6%81%AF%E6%8F%90%E7%A4%BA%E7%BB%84%E4%BB%B6/">vue实现登录/退出(form表单、消息提示组件)</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">微信小程序基础</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/">微信小程序的模板语法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">微信小程序</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>档案</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">微信小程序</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
