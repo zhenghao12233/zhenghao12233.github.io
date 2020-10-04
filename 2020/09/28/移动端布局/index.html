@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端布局 | 郑好的笔记博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
+  
+  <meta name="description" content="一、移动端布局基础12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849501、视口标签  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width,user-scalable&#x3D;no, initi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端布局">
+<meta property="og:url" content="http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:site_name" content="郑好的笔记博客">
+<meta property="og:description" content="一、移动端布局基础12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849501、视口标签  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width,user-scalable&#x3D;no, initi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-28T12:39:06.000Z">
+<meta property="article:modified_time" content="2020-10-04T03:28:04.756Z">
+<meta property="article:author" content="Zheng Hao">
+<meta property="article:tag" content="移动端布局">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon2.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">郑好的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>档案</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        郑好的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        对互联网充满激情
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="首页" target="_blank" href="/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/zhenghao12233">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ:1223363269" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="微信:Z19H97" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-移动端布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      移动端布局
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/移动端布局/">移动端布局</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-09-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <hr>
+<h4 id="一、移动端布局基础"><a href="#一、移动端布局基础" class="headerlink" title="一、移动端布局基础"></a>一、移动端布局基础</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">1、视口标签</span><br><span class="line">  &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width,user-scalable=no, initial-scale=1.0 , maximum-scale=1.0 , minimun-scale=1.0&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">2、 二倍图</span><br><span class="line">    PC端：1个px等于1个像素点</span><br><span class="line">    移动端：1个px等于两个像素点</span><br><span class="line">        物理像素就是分辨率，比如iPhone8的像素是750*1334，所以他的px应该是375px</span><br><span class="line">        我们准备的图片比我们实际需要的大小大2倍，比如我们需要50*50的，就放入100*100的图片，然后缩小至50*50，这样用户放大也不会模糊</span><br><span class="line">    1. 插入图片，width、height</span><br><span class="line">    2. 背景图片background-size:</span><br><span class="line">        px    百分比    cover     contain</span><br><span class="line">        cover能够放大到覆盖容器(宽高等比例)，长宽不一样会出现有的地方要溢出</span><br><span class="line">        contain将图像放大，直到高或者宽碰到了边缘，就停止拉伸</span><br><span class="line">        推荐ps切图工具，cutterman，可直接保存本身、2倍、3倍大小的图片，图层或者选区</span><br><span class="line"></span><br><span class="line">    二倍精灵图：</span><br><span class="line">        精灵图比例缩放为原来的一半</span><br><span class="line">        之后测量缩小后的坐标</span><br><span class="line">        注意代码里面的background-size也要写：精灵图原来宽度的一半 </span><br><span class="line"></span><br><span class="line">3、基础设置</span><br><span class="line">        1、基于wekit，放心使用h5、css3</span><br><span class="line">        2、css初始化，normalize.css</span><br><span class="line">                https://necolas.github.io/normalize.css/  下载初始化代码</span><br><span class="line">        3、盒子模型(规定width、height)</span><br><span class="line">            1.传统盒子模型</span><br><span class="line">                padding、border会加大盒子</span><br><span class="line">            2、css3盒子模型</span><br><span class="line">            box-sizing:border-box</span><br><span class="line">                padding、border将不会加大盒子,往内部填充</span><br><span class="line">            3、总结：移动端可以全部用盒子模型；pc端如果不考虑兼容性，就用传统模式</span><br><span class="line">        4、特殊样式</span><br><span class="line">            a标签点击高亮需要清除</span><br><span class="line">            -webkit-tap-highlight-color:transparent</span><br><span class="line">        5、ios加上这个属性才能给按钮和输入框自定义样式input</span><br><span class="line">            -webkit-appearance:none</span><br><span class="line">        6、禁用长按页面时的弹出菜单</span><br><span class="line">            img,a等等。-webkit-touch-callout:none;</span><br><span class="line"></span><br><span class="line">4、布局选择</span><br><span class="line">    1、单独制作</span><br><span class="line">        流式布局(百分比布局): 给定父盒子盒子最大宽度和最小宽度，超过或低于不再变化，以保证子元素内容再一个合理的空间内</span><br><span class="line">        flex弹性布局</span><br><span class="line">        less+rem+媒体查询</span><br><span class="line">        混合布局</span><br><span class="line">    </span><br><span class="line">    2、响应式页面兼容移动端</span><br><span class="line">        媒体查询</span><br><span class="line">        bootstrap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="二、布局"><a href="#二、布局" class="headerlink" title="二、布局"></a>二、布局</h4><h5 id="2-1-流式布局"><a href="#2-1-流式布局" class="headerlink" title="2.1 流式布局"></a>2.1 流式布局</h5><p><code>2.1 流式布局(百分比布局): 给定父盒子盒子最大宽度和最小宽度，超过或低于不再变化，以保证子元素内容再一个合理的空间内</code></p>
+<h5 id="2-2-flex布局"><a href="#2-2-flex布局" class="headerlink" title="2.2 flex布局"></a>2.2 flex布局</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">2.2 flex 布局</span><br><span class="line">                1、flex-direction：设置主轴方向</span><br><span class="line">                        row/column ;   row-reverse / column-reverse(从右至左、下至上)</span><br><span class="line">                        设定谁是主轴，剩下的就是侧轴</span><br><span class="line">                2、justify-content：设置主轴上的子元素排列方式</span><br><span class="line">                                    flex-strat          （开始位置对齐）</span><br><span class="line">                                    flex-end            （结束位置对齐）</span><br><span class="line">                                    center               居中对齐</span><br><span class="line">                                    space-between        两端对齐</span><br><span class="line">                                    space-around         自动分配间隔</span><br><span class="line">                3、align-items：设置侧轴的排列方式(单行)</span><br><span class="line">                                    flex-start  第一行/第一列的开始位置</span><br><span class="line">                                    flex-end    最后一行/最后一列的开始位置</span><br><span class="line">                                    center</span><br><span class="line">                                    stretch    子元素不要设置高度，自动拉伸至与父亲一样高</span><br><span class="line">                4、flex-wrap：设置子元素是否换行</span><br><span class="line">                        子元素宽度之和大于父元素，也会默认缩小子元素宽度，不使子元素溢出，因此要将他换行</span><br><span class="line">                        nowrap / wrap  / wrap-reverse</span><br><span class="line">                5、align-content:设置换行之后多行元素侧轴的排列方式(多行) 单行下是没有效果的</span><br><span class="line">                                    flex-strat          （开始位置对齐）</span><br><span class="line">                                    flex-end            （结束位置对齐）</span><br><span class="line">                                    center               居中对齐</span><br><span class="line">                                    space-between        两端对齐</span><br><span class="line">                                    space-around         自动分配间隔</span><br><span class="line">                                    stretch              设置子项元素高度平分父元素高度</span><br><span class="line">                6、flex-flow:flex-direction flex-wrap</span><br><span class="line"></span><br><span class="line">             ** 7、flex (份数)  这个属性写给子元素</span><br><span class="line">                    1. 定义子项目分配剩余空间，用flex来表示占多少份数，每个子元素输入1、4、1，则分别占一行的1/6 4/6 1/6</span><br><span class="line">                    2. 注意一个容器有左右两个元素，只有左边这个子元素设置了flex:1，右边的子元素没有设置，</span><br><span class="line">                       而右边设置了固定宽高,因此左边这个子元素将占据剩余空间的100%</span><br><span class="line">                        </span><br><span class="line">                8、align-self</span><br><span class="line">                    允许单个项目在侧轴上有与其他项目不一样的对齐方式，可覆盖align-items属性，默认值为auto，</span><br><span class="line">                </span><br><span class="line">                9、order</span><br><span class="line">                    数值越小、在前面</span><br><span class="line">                    复习：z-index，谁小谁在底层</span><br><span class="line"></span><br><span class="line">                10、采用了浮动的子元素，行内元素也可以使用文本居中了</span><br></pre></td></tr></table></figure>
+<h5 id="2-3-rem是适配布局"><a href="#2-3-rem是适配布局" class="headerlink" title="2.3 rem是适配布局"></a>2.3 rem是适配布局</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">3.1 rem适配布局</span><br><span class="line">   em:  基于父盒子    </span><br><span class="line">       如果父盒子设置font-size:12px, 子元素的1em=12px; 常常父盒子是font-size: 62.5%， 这样1em = 10px</span><br><span class="line">   rem：跟父盒子无关  </span><br><span class="line">       root em是一个相对单位，rem的基准是相对于html元素的字体大小</span><br><span class="line">       比如，根元素(html)设置font-size=12px；非根元素设置width:2rem,则就是24px</span><br><span class="line">       因此，rem的优点：</span><br><span class="line">           通过修改html里面的文字大小来改变页面中元素打的大小进行整体控制</span><br><span class="line">    </span><br><span class="line">    rem适配布局</span><br><span class="line">        1、页面布局的文字能够随着屏幕大小变化而变化</span><br><span class="line">        2、流式布局、flex布局主要针对于宽度布局</span><br><span class="line">        3、屏幕发生变化的时候元素的高度和宽度等比缩放</span><br><span class="line"></span><br><span class="line">3.2 媒体查询</span><br><span class="line">    @media mediatype and|not|only (media feature)&#123;</span><br><span class="line">        css-code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    mediatype:</span><br><span class="line">        all用于所有设备     <span class="built_in">print</span>用于打印机和打印预览       screen用于电脑屏幕、平板电脑、智能手机等</span><br><span class="line">    media feature:</span><br><span class="line">        width   屏幕等于</span><br><span class="line">        max-width   屏幕不超过</span><br><span class="line">        min-width   屏幕不小于</span><br><span class="line"></span><br><span class="line">    示例：@media screen and (max-width: 640px)&#123;     屏幕 &lt;= 640px</span><br><span class="line">              html&#123;</span><br><span class="line">                  font-size: 50px;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">3.3 引入资源</span><br><span class="line">    当样式比较繁多的时候，我们可以针对不同的媒体使用不同的stylesheets，</span><br><span class="line">    原理：就是直接在link中判断设备的尺寸，然后引用不同的css文件</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;./styleSmall.css&quot;</span> media=<span class="string">&quot;screen and (max-width:1003px)&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">3.4.1 媒体查询结合rem</span><br><span class="line">    1) 假设设计稿750px，规定html大小为50px，则页面分成了15份</span><br><span class="line">       关心尺寸：320 360 375 384 400 414 424 480 540 720 750</span><br><span class="line">       示例:   采用了less语法</span><br><span class="line">            html&#123;</span><br><span class="line">                font-size: 50px;  </span><br><span class="line">            &#125;</span><br><span class="line">            @no: 15;</span><br><span class="line">            @media screen and (min-width:320px)&#123;</span><br><span class="line">                html&#123;</span><br><span class="line">                    font-size: 320px / @no;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            .......</span><br><span class="line">    2) 自行计算：页面元素的rem值 = 元素px / html的字体大小(此处就因为50px)</span><br><span class="line"></span><br><span class="line">3.4.2 淘宝提供的flexible.js文件</span><br><span class="line">    1) 自动分成了10份。若设计稿为750px，则字体为75px</span><br><span class="line">    2) 只需在css文件中设置html字体大小</span><br><span class="line">         html&#123;</span><br><span class="line">            font-size:75px !important;</span><br><span class="line">        &#125;</span><br><span class="line">    3) 借助插件帮助计算</span><br><span class="line">        1. cssrem插件，输入px自动计算出rem值</span><br><span class="line">        2. 需要在设置中输入cssrem.root 中规定字体大小(此处就因为75px)</span><br></pre></td></tr></table></figure>
+<h5 id="4、bootstrap响应式布局"><a href="#4、bootstrap响应式布局" class="headerlink" title="4、bootstrap响应式布局"></a>4、bootstrap响应式布局</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">中文官网：https://www.bootcss.com/</span><br><span class="line">        bootstrap栅格系统：</span><br><span class="line">                是指将页面布局划分为等宽的列，然后通过列数的定义来模块化页面布局</span><br><span class="line">                它提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕视口尺寸的增加，系统会自动分为最多12列。</span><br><span class="line">                container宽度是固定的，但是不同屏幕下，container的宽度不同，我们再把container划分为12等份</span><br><span class="line"></span><br><span class="line">            栅格系统通过一系列的行(row)与列(column)的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。</span><br><span class="line">            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">                               超小屏幕&lt;768; 小屏设备&gt;=768; 中等屏幕&gt;=992; 宽屏设备&gt;=1200</span><br><span class="line">            container最大宽度      自动(100%)     750px       970px       1170px</span><br><span class="line">            类前缀                .col-xs-     .col-sm-   .col-md-     .col-lg-</span><br><span class="line">            列数                                       12</span><br><span class="line">            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">                总结：</span><br><span class="line">                    1、行(row)必须放到container布局容器的里面</span><br><span class="line">                    2、我们实现列的平均划分，需要给类前缀</span><br><span class="line">                    3、xs---extra small超小   sm---small    md---medium   lg---large</span><br><span class="line">                    4、列大于12，多余的列所在的元素将被作为一个整体另起一行排列 ; 小于12，多余的将是空白</span><br><span class="line">                    5、每一列默认有左右15px的padding</span><br><span class="line">                    6、可以同时为以一列指定多个设备的类名，以便划分不同份数，例如class=<span class="string">&quot;col-md-4 col-sm-6&quot;</span></span><br><span class="line"></span><br><span class="line">            2、列嵌套：</span><br><span class="line">                栅格系统内置的栅格系统将内容再次嵌套，简单理解就是一个列再分成若干个份小列，</span><br><span class="line">                我们可以通过添加一个新的.row元素和一系列的.col-sm-元素</span><br><span class="line">            到已经存在的.col-sm-元素内</span><br><span class="line">                细节：实现两两中间有空隙，就是再里面嵌套一个小点的盒子，然后旁边就空出来了</span><br><span class="line"></span><br><span class="line">            3、列偏移：</span><br><span class="line">                使用.col-md-offset- 类可以将列向右偏移，这些类实际是通过使用*选择器为当前元素增加了左侧的边距(margin)。</span><br><span class="line">                还少几份，剩下的份数就是偏移的份数</span><br><span class="line">                这个应该也能做两两之间有空隙的，就是后面的元素一次偏移一定距离，但要确保所有的加起来不大于12</span><br><span class="line">                一个盒子也能偏移，偏移剩下距离的一半就居中了</span><br><span class="line"></span><br><span class="line">            4、列排序：</span><br><span class="line">                .col-md-push- 和 .col-md-pull- 就可以改变列的顺序</span><br><span class="line">                推是前面往后面推；拉是后面往前面拉</span><br><span class="line"></span><br><span class="line">            5、响应式工具</span><br><span class="line">                .hidden-xs   .hidden-sm  .hidden-md   .hidden-lg    设置了就只在这个屏幕大小不显示</span><br><span class="line">                与之相反的是：显示是visible-lg,注意的是，这个是设置了就只在这个屏幕大小显示</span><br><span class="line"></span><br><span class="line">            6、补充：</span><br><span class="line">                 boot已经为我们写好了清除浮动，所以只需要添加这个类名clearfix即可</span><br><span class="line">                 bootstrap添加图标,只需要新建span添加类名调整垂直居中</span><br><span class="line">                 boot每列col的宽度都是规定好了的，填充往里面填充，不会撑大，不要用margin左右给边距。</span><br><span class="line">                 在最小屏幕隐藏其中一个元素的时候，另一个会自动充满,因为超小屏幕的宽度是自动适应，只有他一个就占100%</span><br><span class="line"></span><br><span class="line">            示例：</span><br><span class="line">                &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">                    &lt;div class=<span class="string">&quot;col-lg-6&quot;</span>&gt;</span><br><span class="line">                        &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">                            &lt;div class=<span class="string">&quot;col-lg-4&quot;</span>&gt;a&lt;/div&gt;</span><br><span class="line">                            &lt;div class=<span class="string">&quot;col-lg-4 &quot;</span>&gt;a&lt;/div&gt;</span><br><span class="line">                            &lt;div class=<span class="string">&quot;col-lg-4 &quot;</span>&gt;a&lt;/div&gt;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=<span class="string">&quot;col-lg-2&quot;</span>&gt;2&lt;/div&gt;</span><br><span class="line">                    &lt;div class=<span class="string">&quot;col-lg-2&quot;</span>&gt;3&lt;/div&gt;</span><br><span class="line">                    &lt;div class=<span class="string">&quot;col-lg-2&quot;</span>&gt;4&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年10月04日 11:28</p>
+        <p>原始链接： <a class="post-url" href="/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" title="移动端布局">http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/</a></p>
+        <footer>
+            <a href="http://example.com">
+                <img src="/images/myLogo.png" alt="Zheng Hao">
+                Zheng Hao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/&title=《移动端布局》 — 郑好的笔记博客&pic=/images/hexo建站.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/&title=《移动端布局》 — 郑好的笔记博客&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端布局》 — 郑好的笔记博客&url=http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/&via=http://example.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/28/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/移动端布局/" class="color1">移动端布局</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80%E5%9F%BA%E7%A1%80"><span class="post-toc-text">一、移动端布局基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%B8%83%E5%B1%80"><span class="post-toc-text">二、布局</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="post-toc-text">2.1 流式布局</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-flex%E5%B8%83%E5%B1%80"><span class="post-toc-text">2.2 flex布局</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-3-rem%E6%98%AF%E9%80%82%E9%85%8D%E5%B8%83%E5%B1%80"><span class="post-toc-text">2.3 rem是适配布局</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4%E3%80%81bootstrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="post-toc-text">4、bootstrap响应式布局</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/09/28/Ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Ajax技术实现局部刷新技术
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/09/28/H5%E3%80%81CSS3%E6%96%B0%E5%A2%9E%E5%B8%B8%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">H5、CSS3新增常用标签</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Zheng Hao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://example.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Ajax%E4%B8%8EFormData%E5%AF%B9%E8%B1%A1/">Ajax与FormData对象</a><a class="category-link" href="/categories/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">Ajax与客户端模板引擎</a><a class="category-link" href="/categories/Ajax%E5%9F%BA%E7%A1%80/">Ajax基础</a><a class="category-link" href="/categories/CORS%E8%B7%A8%E5%9F%9F/">CORS跨域</a><a class="category-link" href="/categories/H5%E3%80%81CSS3/">H5、CSS3</a><a class="category-link" href="/categories/JSONP%E8%AF%B7%E6%B1%82/">JSONP请求</a><a class="category-link" href="/categories/async%E3%80%81await/">async、await</a><a class="category-link" href="/categories/axios/">axios</a><a class="category-link" href="/categories/element-ui%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8/">element-ui用户列表</a><a class="category-link" href="/categories/element-ui%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E5%88%97%E8%A1%A8/">element-ui角色权限列表</a><a class="category-link" href="/categories/element-ui%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80/">element-ui首页布局</a><a class="category-link" href="/categories/fetch/">fetch</a><a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/jQuery%E4%B8%AD%E7%9A%84Ajax/">jQuery中的Ajax</a><a class="category-link" href="/categories/promise/">promise</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA/">vue实现登录/退出</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84wxss/">小程序的wxss</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/">小程序的事件绑定</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E4%BB%B6/">小程序的组件</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/">小程序的自定义组件</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6/">小程序的表单组件</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">微信小程序基础</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/">微信小程序的模板语法</a><a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/">移动端布局</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ajax/" style="font-size: 10px;">$.ajax()</a> <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/H5%E3%80%81CSS3/" style="font-size: 10px;">H5、CSS3</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/async%E3%80%81await/" style="font-size: 10px;">async、await</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/fetch/" style="font-size: 10px;">fetch</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 20px;">微信小程序</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" style="font-size: 10px;">移动端布局</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>档案</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ajax/" style="font-size: 10px;">$.ajax()</a> <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/H5%E3%80%81CSS3/" style="font-size: 10px;">H5、CSS3</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/async%E3%80%81await/" style="font-size: 10px;">async、await</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/fetch/" style="font-size: 10px;">fetch</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 20px;">微信小程序</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" style="font-size: 10px;">移动端布局</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
