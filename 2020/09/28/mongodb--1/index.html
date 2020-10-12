@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mongoDB数据库 | 郑好的笔记博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
+  
+  <meta name="description" content="一、命令行中的基础操作切换与插入 123456789mongo               连接数据库show dbs            查询有哪些数据库use itying          切换到哪个数据库，此时可视化工具不会显示，因为还未插入集合db.dropDatabase()   删除当前数据库(先 use itying 切换至当前数据库)show collection     查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongoDB数据库">
+<meta property="og:url" content="http://example.com/2020/09/28/mongodb--1/index.html">
+<meta property="og:site_name" content="郑好的笔记博客">
+<meta property="og:description" content="一、命令行中的基础操作切换与插入 123456789mongo               连接数据库show dbs            查询有哪些数据库use itying          切换到哪个数据库，此时可视化工具不会显示，因为还未插入集合db.dropDatabase()   删除当前数据库(先 use itying 切换至当前数据库)show collection     查">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-28T12:39:04.000Z">
+<meta property="article:modified_time" content="2020-10-11T06:08:21.754Z">
+<meta property="article:author" content="Zheng Hao">
+<meta property="article:tag" content="mongoDB">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon2.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">郑好的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>档案</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        郑好的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="首页" target="_blank" href="/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/zhenghao12233">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ:1223363269" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="微信:Z19H97" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-mongodb--1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      mongoDB数据库
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/mongoDB基础/">mongoDB基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-09-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <hr>
+<h4 id="一、命令行中的基础操作"><a href="#一、命令行中的基础操作" class="headerlink" title="一、命令行中的基础操作"></a>一、命令行中的基础操作</h4><p><code>切换与插入</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mongo               连接数据库</span><br><span class="line">show dbs            查询有哪些数据库</span><br><span class="line">use itying          切换到哪个数据库，此时可视化工具不会显示，因为还未插入集合</span><br><span class="line">db.dropDatabase()   删除当前数据库(先 use itying 切换至当前数据库)</span><br><span class="line"></span><br><span class="line">show collection     查询有哪些集合</span><br><span class="line">db.user             切换到哪个集合</span><br><span class="line">db.user.insert(&#123;<span class="string">&quot;username&quot;</span>:<span class="string">&quot;zhangsan&quot;</span>,<span class="string">&quot;age&quot;</span>:30&#125;)    切换集合并创建数据(增)</span><br><span class="line">db.user.drop()      删除指定集合</span><br></pre></td></tr></table></figure>
+<p><code>查询</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">db.user.find()                              查找该集合下的所有数据</span><br><span class="line">db.user.find(&#123;<span class="string">&quot;age&quot;</span>: 22&#125;)                   查询 age = 22 的数据</span><br><span class="line">db.user.find(&#123;name: <span class="string">&#x27;zhangsan&#x27;</span>, age: 22&#125;)   查询 name = zhangsan, age = 22 的数据</span><br><span class="line"></span><br><span class="line">db.user.find(&#123;age: &#123;<span class="variable">$gt</span>: 22&#125;&#125;)                age &gt; 22</span><br><span class="line">db.user.find(&#123;age: &#123;<span class="variable">$lt</span>: 22&#125;&#125;)                age &lt; 22</span><br><span class="line">b.user.find(&#123;age: &#123;<span class="variable">$gte</span>: 25&#125;&#125;)                age &gt;= 25</span><br><span class="line">db.user.find(&#123;age: &#123;<span class="variable">$lte</span>: 25&#125;&#125;)               age &lt;= 25</span><br><span class="line">db.user.find(&#123;age: &#123;<span class="variable">$gte</span>: 23, <span class="variable">$lte</span>: 26&#125;&#125;)     23 &lt;= age &lt;= 26  </span><br><span class="line"></span><br><span class="line">db.user.find(&#123;name: /mongo/&#125;)           查询name中包含mongo的数据</span><br><span class="line">db.user.find(&#123;hobbies:&#123;<span class="variable">$in</span>:[<span class="string">&#x27;足球&#x27;</span>]&#125;&#125;)  查询用户爱好中包含足球的</span><br><span class="line">db.user.find(&#123;name: /^mongo/&#125;)          查询name中以mongo开头的</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">db.user.find(&#123;&#125;, &#123;name: 1, age: 1&#125;, &#123;_id: 0&#125;)       只查询name、age，且把默认查询的_id也取消查询</span><br><span class="line">db.user.find(&#123;age: &#123;<span class="variable">$gt</span>: 25&#125;&#125;, &#123;name: 1, age: 1&#125;)   只查询name、age，且只查询 age &gt; 25</span><br><span class="line">user.find().select(<span class="string">&#x27;name email -_id&#x27;</span>)               node中可以这样</span><br><span class="line"></span><br><span class="line">db.user.find().sort(&#123;age: 1&#125;)  = user.find().sort(<span class="string">&#x27;age&#x27;</span>)    升序</span><br><span class="line">db.user.find().sort(&#123;age:-1&#125;)  = user.find().sort(<span class="string">&#x27;-age&#x27;</span>)   降序</span><br><span class="line"></span><br><span class="line">db.user.find().<span class="built_in">limit</span>(5)             查询前 5 条数据</span><br><span class="line">db.user.find().skip(10)             查询 10 条以后的数据</span><br><span class="line">db.user.find().skip(5).<span class="built_in">limit</span>(10)    跳过 5 条后的 10 条数据</span><br><span class="line"></span><br><span class="line">db.user.find(&#123;<span class="variable">$or</span>: [&#123;age: 22&#125;, &#123;age: 25&#125;]&#125;)   查询 age 为22或25的数据</span><br><span class="line"></span><br><span class="line">db.user.findOne(&#123;条件&#125;)  =  db.user.find(&#123;条件&#125;).<span class="built_in">limit</span>(1)      只查找一条</span><br><span class="line"></span><br><span class="line">db.user.find().count()                      统计所有数据数量</span><br><span class="line">db.user.find(&#123;age: &#123;<span class="variable">$gte</span>: 25&#125;&#125;).count()     统计 age &gt;= 25 的数据数量</span><br><span class="line">如果要返回限制之后的记录数量，要使用 count(<span class="literal">true</span>)或者 count(非 0)</span><br><span class="line">db.users.find().skip(10).<span class="built_in">limit</span>(5).count(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">db.user.find(&#123;name:&#123;<span class="variable">$exists</span>:<span class="literal">true</span>&#125;&#125;)     查询含有name的所有数据</span><br><span class="line">db.user.find(&#123;name:&#123;<span class="variable">$exists</span>:<span class="literal">false</span>&#125;&#125;)    查询没有name的所有数据</span><br></pre></td></tr></table></figure>
+<p><code>更新(包括修改与追加)</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.student.update(&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;小明&quot;</span>&#125;,&#123;<span class="variable">$set</span>:&#123;<span class="string">&quot;age&quot;</span>:16&#125;&#125;)        查找名字叫做小明的一条，把年龄更改为 16 岁</span><br><span class="line">db.student.update(&#123;<span class="string">&quot;score.shuxue&quot;</span>:70&#125;,&#123;<span class="variable">$set</span>:&#123;<span class="string">&quot;age&quot;</span>:33&#125;&#125;)    查找数学成绩是 70，把年龄更改为 33 岁</span><br><span class="line"></span><br><span class="line">db.student.update(&#123;<span class="string">&quot;sex&quot;</span>:<span class="string">&quot;男&quot;</span>&#125;,&#123;<span class="variable">$set</span>:&#123;<span class="string">&quot;age&quot;</span>:33&#125;&#125;,&#123;multi: <span class="literal">true</span>&#125;)   查找多条进行更新</span><br><span class="line"></span><br><span class="line">user.updateOne(&#123;name:<span class="string">&#x27;李四&#x27;</span>&#125;,&#123;name:<span class="string">&#x27;张三&#x27;</span>&#125;)       更新一条，只将李四修改为张三</span><br><span class="line">user.updateMany(&#123;&#125;,&#123;age:56&#125;)                      更新多条，将所有的年龄都改为56</span><br><span class="line"></span><br><span class="line">注意：update集成了updateOne、updateMany</span><br><span class="line">     update如果不用<span class="variable">$set</span>将是整体替换，而不是只更新单个数据;updateOne、updateMany则不需要<span class="variable">$set</span></span><br></pre></td></tr></table></figure>
+
+<p><code>删除</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.user.remove(&#123;age:&#123;<span class="variable">$gt</span>:30&#125;&#125;)                              删除age &gt; 30 的所有数据</span><br><span class="line">db.restaurants.remove( &#123;age:&#123;<span class="variable">$gt</span>:30&#125;&#125;, &#123; justOne: <span class="literal">true</span> &#125;    只删除第一条</span><br><span class="line"></span><br><span class="line">user.findOneAndDelete(&#123;_id:<span class="string">&#x27;...&#x27;</span>&#125;)     删除第一条，输入条件就删除符合条件的第一条</span><br><span class="line">user.deleteMany(&#123;条件&#125;)                删除所有，输入就删除符合条件的所有</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年10月11日 14:08</p>
+        <p>原始链接： <a class="post-url" href="/2020/09/28/mongodb--1/" title="mongoDB数据库">http://example.com/2020/09/28/mongodb--1/</a></p>
+        <footer>
+            <a href="http://example.com">
+                <img src="/images/myLogo.png" alt="Zheng Hao">
+                Zheng Hao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/28/mongodb--1/&title=《mongoDB数据库》 — 郑好的笔记博客&pic=http://example.comimages/myLogo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/28/mongodb--1/&title=《mongoDB数据库》 — 郑好的笔记博客&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/28/mongodb--1/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mongoDB数据库》 — 郑好的笔记博客&url=http://example.com/2020/09/28/mongodb--1/&via=http://example.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/28/mongodb--1/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/28/mongodb--1/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/mongoDB/" class="color3">mongoDB</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="post-toc-text">一、命令行中的基础操作</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/09/28/mongodb--2/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          MongoDb查询优化
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/09/28/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">利用hexo框架快速建一个博客</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Zheng Hao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://example.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Ajax%E4%B8%8EFormData%E5%AF%B9%E8%B1%A1/">Ajax与FormData对象</a><a class="category-link" href="/categories/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">Ajax与客户端模板引擎</a><a class="category-link" href="/categories/Ajax%E5%9F%BA%E7%A1%80/">Ajax基础</a><a class="category-link" href="/categories/CORS%E8%B7%A8%E5%9F%9F/">CORS跨域</a><a class="category-link" href="/categories/H5%E3%80%81CSS3/">H5、CSS3</a><a class="category-link" href="/categories/JSONP%E8%AF%B7%E6%B1%82/">JSONP请求</a><a class="category-link" href="/categories/async%E3%80%81await/">async、await</a><a class="category-link" href="/categories/axios/">axios</a><a class="category-link" href="/categories/element-ui%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8/">element-ui商品分类列表</a><a class="category-link" href="/categories/element-ui%E5%95%86%E5%93%81%E5%8F%82%E6%95%B0/">element-ui商品参数</a><a class="category-link" href="/categories/element-ui%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8/">element-ui用户列表</a><a class="category-link" href="/categories/element-ui%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E5%88%97%E8%A1%A8/">element-ui角色权限列表</a><a class="category-link" href="/categories/element-ui%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80/">element-ui首页布局</a><a class="category-link" href="/categories/fetch/">fetch</a><a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/jQuery%E4%B8%AD%E7%9A%84Ajax/">jQuery中的Ajax</a><a class="category-link" href="/categories/jsBOM/">jsBOM</a><a class="category-link" href="/categories/jsDOM%E3%80%81%E4%BA%8B%E4%BB%B6/">jsDOM、事件</a><a class="category-link" href="/categories/js%E5%AD%97%E7%AC%A6%E4%B8%B2/">js字符串</a><a class="category-link" href="/categories/js%E5%AF%B9%E8%B1%A1/">js对象</a><a class="category-link" href="/categories/js%E6%95%B0%E7%BB%84/">js数组</a><a class="category-link" href="/categories/mongoDB-node-js/">mongoDB--node.js</a><a class="category-link" href="/categories/mongoDB%E5%9F%BA%E7%A1%80/">mongoDB基础</a><a class="category-link" href="/categories/mongoDB%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/">mongoDB查询优化</a><a class="category-link" href="/categories/mongoDB%E7%9A%84%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">mongoDB的高级查询</a><a class="category-link" href="/categories/mongoDB%E8%B4%A6%E6%88%B7%E6%9D%83%E9%99%90%E9%85%8D%E7%BD%AE/">mongoDB账户权限配置</a><a class="category-link" href="/categories/promise/">promise</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-1/">uniapp基础--1</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-2/">uniapp基础--2</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-3/">uniapp基础--3</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-4/">uniapp基础--4</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA/">vue实现登录/退出</a><a class="category-link" href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">作用域和作用域链</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84wxss/">小程序的wxss</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/">小程序的事件绑定</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">小程序的生命周期</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E4%BB%B6/">小程序的组件</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/">小程序的自定义组件</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6/">小程序的表单组件</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">微信小程序基础</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/">微信小程序的模板语法</a><a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/">移动端布局</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ajax/" style="font-size: 10px;">$.ajax()</a> <a href="/tags/Ajax/" style="font-size: 12px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/H5%E3%80%81CSS3/" style="font-size: 10px;">H5、CSS3</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/async%E3%80%81await/" style="font-size: 10px;">async、await</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/fetch/" style="font-size: 10px;">fetch</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 18px;">js基础</a> <a href="/tags/mongoDB/" style="font-size: 16px;">mongoDB</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/uniapp/" style="font-size: 14px;">uniapp</a> <a href="/tags/vue/" style="font-size: 18px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 20px;">微信小程序</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" style="font-size: 10px;">移动端布局</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>档案</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ajax/" style="font-size: 10px;">$.ajax()</a> <a href="/tags/Ajax/" style="font-size: 12px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/H5%E3%80%81CSS3/" style="font-size: 10px;">H5、CSS3</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/async%E3%80%81await/" style="font-size: 10px;">async、await</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/fetch/" style="font-size: 10px;">fetch</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 18px;">js基础</a> <a href="/tags/mongoDB/" style="font-size: 16px;">mongoDB</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/uniapp/" style="font-size: 14px;">uniapp</a> <a href="/tags/vue/" style="font-size: 18px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 20px;">微信小程序</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" style="font-size: 10px;">移动端布局</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
