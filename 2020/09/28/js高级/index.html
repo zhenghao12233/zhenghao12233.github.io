@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js高级 | 郑好的笔记博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZhengHao,ZhengHao's Blog" />
+  
+  <meta name="description" content="一、类和对象1. 创建类12345678910111213141516171819202122232425262728293031323334353637&#x2F;&#x2F; 类形式    class Star &amp;#123;      constructor(uname,age)&amp;#123;          this.uname &#x3D; uname;          this.age &#x3D; age;      &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js高级">
+<meta property="og:url" content="http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/index.html">
+<meta property="og:site_name" content="郑好的笔记博客">
+<meta property="og:description" content="一、类和对象1. 创建类12345678910111213141516171819202122232425262728293031323334353637&#x2F;&#x2F; 类形式    class Star &amp;#123;      constructor(uname,age)&amp;#123;          this.uname &#x3D; uname;          this.age &#x3D; age;      &amp;#">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-28T12:39:14.000Z">
+<meta property="article:modified_time" content="2020-10-16T02:09:54.298Z">
+<meta property="article:author" content="Zheng Hao">
+<meta property="article:tag" content="js高级">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon2.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">郑好的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>档案</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        郑好的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="首页" target="_blank" href="/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/zhenghao12233">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ:1223363269" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="微信:Z19H97" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-js高级" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      js高级
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/js高级/">js高级</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-09-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h4 id="一、类和对象"><a href="#一、类和对象" class="headerlink" title="一、类和对象"></a>一、类和对象</h4><h5 id="1-创建类"><a href="#1-创建类" class="headerlink" title="1. 创建类"></a>1. 创建类</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 类形式</span><br><span class="line">    class Star &#123;</span><br><span class="line">      constructor(uname,age)&#123;</span><br><span class="line">          this.uname = uname;</span><br><span class="line">          this.age = age;</span><br><span class="line">      &#125;;</span><br><span class="line">      sing(song)&#123;</span><br><span class="line">          console.log(this.uname + song);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    var ldh = new Star(<span class="string">&#x27;刘德华&#x27;</span>,18); //new调用了这个star，里面constructor就执行了</span><br><span class="line">    var zxy = new Star(<span class="string">&#x27;张学友&#x27;</span>,20); </span><br><span class="line">    console.log(ldh.uname+ldh.age);</span><br><span class="line">    console.log(zxy.uname+zxy.age);</span><br><span class="line">    ldh.sing(<span class="string">&#x27;冰雨&#x27;</span>)</span><br><span class="line">    zxy.sing(<span class="string">&#x27;吻别&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    //传统构造函数的形式</span><br><span class="line">    <span class="keyword">function</span> Person(name,age)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.talk = <span class="keyword">function</span>(word)&#123;</span><br><span class="line">            console.log(this.age + word)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">//   构造函数在外部添加的方法</span><br><span class="line">    Person.prototype.sing = <span class="keyword">function</span> (song)&#123;</span><br><span class="line">        console.log(this.name + song);</span><br><span class="line">    &#125;</span><br><span class="line">    var p = new Person(<span class="string">&#x27;刘德华&#x27;</span>,18);</span><br><span class="line">    console.log(p.name + p.age);     //普通的对象构造，就没办法多个一起用，所以这里应该用到继承</span><br><span class="line">    p.sing(<span class="string">&#x27;冰雨&#x27;</span>)</span><br><span class="line">    p.talk(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">    var z = new Person(<span class="string">&#x27;张学友&#x27;</span>,20);</span><br><span class="line">    console.log(z.name+z.age);</span><br><span class="line">    z.sing(<span class="string">&#x27;吻别&#x27;</span>)</span><br><span class="line">    z.talk(<span class="string">&#x27;nihao&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-类的继承"><a href="#1-2-类的继承" class="headerlink" title="1.2 类的继承"></a>1.2 类的继承</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">// 在constructor中进行继承</span><br><span class="line">class Father &#123;</span><br><span class="line">    constructor (x,y)&#123;</span><br><span class="line">          this.x = x;</span><br><span class="line">          this.y = y;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="title">money</span></span> ()&#123;</span><br><span class="line">        console.log(100);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="title">sum</span></span>()&#123;</span><br><span class="line">        console.log(this.x + this.y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">    constructor(x, y )&#123;</span><br><span class="line">        super(x,y);   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="title">subtract</span></span>()&#123;</span><br><span class="line">        console.log(this.x - this.y);</span><br><span class="line">    &#125;             </span><br><span class="line">&#125;</span><br><span class="line">var father = new Father(5,5)</span><br><span class="line">father.money()</span><br><span class="line">father.sum()</span><br><span class="line"></span><br><span class="line">var son = new Son(2,3);</span><br><span class="line">son.money();    //100</span><br><span class="line">son.sum()       //5</span><br><span class="line">son.subtract(); //-1</span><br><span class="line"></span><br><span class="line">// 方法里面调用父子的方法</span><br><span class="line">class Father2 &#123;</span><br><span class="line">    <span class="function"><span class="title">say</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">&#x27;我是爸爸&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son2 extends Father2 &#123;</span><br><span class="line">    <span class="function"><span class="title">talk</span></span>()&#123;</span><br><span class="line">      console.log(super.say() + <span class="string">&#x27;的儿子&#x27;</span>);    // 我是爸爸的儿子</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var son2 = new Son2();</span><br><span class="line">son2.talk();      </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">使用类的注意事项：</span><br><span class="line">    1、类没有变量提升，所以必须先定义类，才能通过类实例化对象</span><br><span class="line">    2、类里面的共有的属性和方法中调用属性一定要加this使用</span><br><span class="line">    3、还要注意this的指向，谁调用了这个方法(函数)</span><br><span class="line"></span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">&quot;button&quot;</span> class=<span class="string">&quot;btn&quot;</span> name=<span class="string">&quot;&quot;</span> id=<span class="string">&quot;&quot;</span> value=<span class="string">&quot;点击&quot;</span>&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var that;</span><br><span class="line">        class Star &#123;</span><br><span class="line">            constructor (uname,age)&#123;</span><br><span class="line">                that=this;        </span><br><span class="line">                this.uname = uname;</span><br><span class="line">                this.age = age;</span><br><span class="line">              // 直接在这里调用，那么就是这个实例对象进行方法调用，会正常输出两个正确的值</span><br><span class="line">              //   this.sing();</span><br><span class="line">              // 如果进行事件绑定，那么这个方法是被这个事件对象所调用，this并不能指向实例对象</span><br><span class="line">                this.btn = document.querySelector(<span class="string">&#x27;.btn&#x27;</span>);</span><br><span class="line">                this.btn.onclick = this.sing;   </span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="function"><span class="title">sing</span></span>()&#123;</span><br><span class="line">      // 注意如果这里用this的话，那么this指向这个按钮对象，而不是实例对象，因此this不存在uname，所以会输出undefined</span><br><span class="line">                console.log(that.uname); //刘德华</span><br><span class="line">                console.log(this.uname); //undefined</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        var ldh = new Star(<span class="string">&#x27;刘德华&#x27;</span>,18);  </span><br><span class="line">        </span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<details>
+<summary><font size=4 color=#409EFF>使用类创建的tab栏</font></summary>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">&lt;main&gt;</span><br><span class="line">    &lt;h4&gt;</span><br><span class="line">        Js 面向对象 动态添加标签页</span><br><span class="line">    &lt;/h4&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;tabsbox&quot;</span> id=<span class="string">&quot;tab&quot;</span>&gt;</span><br><span class="line">        &lt;!-- tab 标签 --&gt;</span><br><span class="line">        &lt;nav class=<span class="string">&quot;firstnav&quot;</span>&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li class=<span class="string">&quot;liactive&quot;</span>&gt;&lt;span&gt;测试1&lt;/span&gt;&lt;span class=<span class="string">&quot;iconfont icon-guanbi&quot;</span>&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;&lt;span&gt;测试2&lt;/span&gt;&lt;span class=<span class="string">&quot;iconfont icon-guanbi&quot;</span>&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;&lt;span&gt;测试3&lt;/span&gt;&lt;span class=<span class="string">&quot;iconfont icon-guanbi&quot;</span>&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">            &lt;div class=<span class="string">&quot;tabadd&quot;</span>&gt;</span><br><span class="line">                &lt;span&gt;+&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- tab 内容 --&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;tabscon&quot;</span>&gt;</span><br><span class="line">            &lt;section class=<span class="string">&quot;conactive&quot;</span>&gt;测试1&lt;/section&gt;</span><br><span class="line">            &lt;section&gt;测试2&lt;/section&gt;</span><br><span class="line">            &lt;section&gt;测试3&lt;/section&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/main&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var that;</span><br><span class="line">class Tab&#123;</span><br><span class="line">    constructor(id) &#123;</span><br><span class="line">        //获取元素</span><br><span class="line">            that = this;    //this指向这Tab调用者，将这个给复制给一个that，方便后面调用</span><br><span class="line">            this.main = document.querySelector(id);</span><br><span class="line"></span><br><span class="line">            this.add = this.main.querySelector(<span class="string">&#x27;.tabadd&#x27;</span>);</span><br><span class="line">            this.ul = this.main.querySelector(<span class="string">&#x27;.firstnav ul:first-child&#x27;</span>);</span><br><span class="line">            this.fsection = this.main.querySelector(<span class="string">&#x27;.tabscon&#x27;</span>);</span><br><span class="line"></span><br><span class="line">            this.init();</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">    //初始化，让相关的元素绑定事件</span><br><span class="line">    <span class="function"><span class="title">init</span></span>()&#123;</span><br><span class="line">        this.updateNode();</span><br><span class="line">        this.add.onclick = this.addTab;</span><br><span class="line">        <span class="keyword">for</span>(var i = 0; i &lt; this.lis.length; i++)&#123;</span><br><span class="line">            this.lis[i].index = i;</span><br><span class="line">            this.lis[i].onclick = this.toggleTab;   //调用toggle函数</span><br><span class="line">            this.remove[i].onclick =this.removeTab;</span><br><span class="line">            this.spans[i].ondblclick=this.editTab;</span><br><span class="line">            this.sections[i].ondblclick=this.editTab;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //获取所有的小li和section</span><br><span class="line">    <span class="function"><span class="title">updateNode</span></span>()&#123;</span><br><span class="line">        this.lis = this.main.querySelectorAll(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">        this.sections = this.main.querySelectorAll(<span class="string">&#x27;section&#x27;</span>);</span><br><span class="line">        this.remove = this.main.querySelectorAll(<span class="string">&#x27;.icon-guanbi&#x27;</span>) ;</span><br><span class="line">        this.spans = this.main.querySelectorAll(<span class="string">&#x27;.firstnav li span:first-child&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    //1、切换功能</span><br><span class="line">    <span class="function"><span class="title">toggleTab</span></span>()&#123;</span><br><span class="line">        // console.log(this.index);   //这个函数的调用者是lis</span><br><span class="line">        that.clearClass();  //clearClass同样是Tab的,而不是this指向lis</span><br><span class="line">        this.className = <span class="string">&#x27;liactive&#x27;</span>;                        //因为sections的this不是指向lis的，所以用我们前面保存的that替换.</span><br><span class="line">        that.sections[this.index].className = <span class="string">&#x27;conactive&#x27;</span>   //但是下标依旧是指的lis的this，所以不要替换</span><br><span class="line">    &#125;   </span><br><span class="line">    //删除其余的class类名</span><br><span class="line">    <span class="function"><span class="title">clearClass</span></span>()&#123;</span><br><span class="line">        <span class="keyword">for</span> ( var i = 0 ; i &lt; this.lis.length ; i++)&#123;</span><br><span class="line">            this.lis[i].className = <span class="string">&#x27;&#x27;</span>;     //因为clearClass是属于Tab，所以这里都是用this</span><br><span class="line">            this.sections[i].className=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;                                                            </span><br><span class="line">    //2、添加</span><br><span class="line">    <span class="function"><span class="title">addTab</span></span>()&#123;</span><br><span class="line">        that.clearClass(); //先清除一遍类名，再添加带有类名的标签</span><br><span class="line">        //创建li元素和section元素</span><br><span class="line">        //insertAdjacentHTML(位置,追加的元素)可以直接把字符串的格式元素添加到父元素当中</span><br><span class="line">        //beforebegin / afterbegin  自身的前面 / 自身内部的第一个子节点之前</span><br><span class="line">        //beforeend   / afterend    插入到内部最后一个节点之后 / 元素自身的后面</span><br><span class="line">        var li = <span class="string">&#x27;&lt;li class=&quot;liactive&quot;&gt;&lt;span&gt;新选项卡&lt;/span&gt;&lt;span class=&quot;iconfont icon-guanbi&quot;&gt;&lt;/span&gt;&lt;/li&gt;&#x27;</span></span><br><span class="line">        var section = <span class="string">&#x27;&lt;section class=&quot;conactive&quot;&gt;新内容&lt;/section&gt;&#x27;</span></span><br><span class="line">        that.ul.insertAdjacentHTML(<span class="string">&#x27;beforeend&#x27;</span>,li);</span><br><span class="line">        that.fsection.insertAdjacentHTML(<span class="string">&#x27;beforeend&#x27;</span>,section);</span><br><span class="line">        that.init();    //格式化一遍，将数据重新渲染,每次点击都将重新获得一遍数据内容</span><br><span class="line">    &#125;</span><br><span class="line">    //3、删除</span><br><span class="line">    removeTab(e)&#123;   //删除同样要重新获取数据，因为添加之后，索引号就变化了</span><br><span class="line">        e.stopPropagation();   //阻止冒泡，防止li发生点击事件</span><br><span class="line">        var index = this.parentNode.index;</span><br><span class="line">        that.lis[index].remove();   //remove可以直接删除指定元素</span><br><span class="line">        that.sections[index].remove();</span><br><span class="line">        that.init();</span><br><span class="line">        //当我们删除的不是选中状态的li，我们就让他的状态保持不变,当前li点击的不是选中li，就<span class="built_in">return</span>结束语句，让有状态的li继续有</span><br><span class="line">        <span class="keyword">if</span>(document.querySelector(<span class="string">&#x27;.liactive&#x27;</span>)) <span class="built_in">return</span>; //只输出一个，可以省略花括号</span><br><span class="line">        //当我们删除了选中状态的li的时候，让他的前一个li处于选定状态</span><br><span class="line">        index--;        //让他减了之后，让他再去执行一遍点击事件，因此就可以很快的处理li和section的显示</span><br><span class="line">        that.lis[index] &amp;&amp; that.lis[index].onclick(); //前面那个为真才去调用后面这个，为假则不调用</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    //4、修改功能</span><br><span class="line">    <span class="function"><span class="title">editTab</span></span>()&#123;</span><br><span class="line">        var str = this.innerHTML;</span><br><span class="line">        //双击事件ondblclick</span><br><span class="line">        //双击不选中文字的代码</span><br><span class="line">        window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();</span><br><span class="line">        this.innerHTML = <span class="string">&#x27;&lt;input type=&quot;text&quot;&gt;&#x27;</span></span><br><span class="line">        var input = this.children[0];</span><br><span class="line">        input.value = str;</span><br><span class="line">        input.select(); //文本框里面的文字处于选定状态</span><br><span class="line">        //当我们离开文本框，就把文本框里面的值给span</span><br><span class="line">        input.onblur = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            this.parentNode.innerHTML = this.value;</span><br><span class="line">        &#125;</span><br><span class="line">        input.onkeyup = <span class="keyword">function</span>(e)&#123;</span><br><span class="line">            <span class="keyword">if</span>(e.keyCode === 13)&#123;</span><br><span class="line">                // this.parentNode.innerHTML = this.value;</span><br><span class="line">                this.blur();    //这个更快，因为前面已经用了onblur</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">new Tab(<span class="string">&#x27;#tab&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</details>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年10月16日 10:09</p>
+        <p>原始链接： <a class="post-url" href="/2020/09/28/js%E9%AB%98%E7%BA%A7/" title="js高级">http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/</a></p>
+        <footer>
+            <a href="http://example.com">
+                <img src="/images/myLogo.png" alt="Zheng Hao">
+                Zheng Hao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/&title=《js高级》 — 郑好的笔记博客&pic=/images/hexo建站.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/&title=《js高级》 — 郑好的笔记博客&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js高级》 — 郑好的笔记博客&url=http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/&via=http://example.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://example.com/2020/09/28/js%E9%AB%98%E7%BA%A7/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/js高级/" class="color5">js高级</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="post-toc-text">一、类和对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%B1%BB"><span class="post-toc-text">1. 创建类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-2-%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="post-toc-text">1.2 类的继承</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/09/28/Ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Ajax技术实现局部刷新技术
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/09/28/jQuery/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">jQuery</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Zheng Hao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://example.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Ajax%E4%B8%8EFormData%E5%AF%B9%E8%B1%A1/">Ajax与FormData对象</a><a class="category-link" href="/categories/Ajax%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">Ajax与客户端模板引擎</a><a class="category-link" href="/categories/Ajax%E5%9F%BA%E7%A1%80/">Ajax基础</a><a class="category-link" href="/categories/CORS%E8%B7%A8%E5%9F%9F/">CORS跨域</a><a class="category-link" href="/categories/H5%E3%80%81CSS3/">H5、CSS3</a><a class="category-link" href="/categories/JSONP%E8%AF%B7%E6%B1%82/">JSONP请求</a><a class="category-link" href="/categories/async%E3%80%81await/">async、await</a><a class="category-link" href="/categories/axios/">axios</a><a class="category-link" href="/categories/element-ui%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8/">element-ui商品分类列表</a><a class="category-link" href="/categories/element-ui%E5%95%86%E5%93%81%E5%8F%82%E6%95%B0/">element-ui商品参数</a><a class="category-link" href="/categories/element-ui%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8/">element-ui用户列表</a><a class="category-link" href="/categories/element-ui%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E5%88%97%E8%A1%A8/">element-ui角色权限列表</a><a class="category-link" href="/categories/element-ui%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80/">element-ui首页布局</a><a class="category-link" href="/categories/fetch/">fetch</a><a class="category-link" href="/categories/hexo%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo框架快速创建个人博客</a><a class="category-link" href="/categories/jQuery/">jQuery</a><a class="category-link" href="/categories/jQuery%E4%B8%AD%E7%9A%84Ajax/">jQuery中的Ajax</a><a class="category-link" href="/categories/jsBOM/">jsBOM</a><a class="category-link" href="/categories/jsDOM%E3%80%81%E4%BA%8B%E4%BB%B6/">jsDOM、事件</a><a class="category-link" href="/categories/js%E5%AD%97%E7%AC%A6%E4%B8%B2/">js字符串</a><a class="category-link" href="/categories/js%E5%AF%B9%E8%B1%A1/">js对象</a><a class="category-link" href="/categories/js%E6%95%B0%E7%BB%84/">js数组</a><a class="category-link" href="/categories/js%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%89%B9%E6%95%88/">js移动端特效</a><a class="category-link" href="/categories/js%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/">js网页特效</a><a class="category-link" href="/categories/js%E9%AB%98%E7%BA%A7/">js高级</a><a class="category-link" href="/categories/mongoDB-node-js/">mongoDB--node.js</a><a class="category-link" href="/categories/mongoDB%E5%9F%BA%E7%A1%80/">mongoDB基础</a><a class="category-link" href="/categories/mongoDB%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/">mongoDB查询优化</a><a class="category-link" href="/categories/mongoDB%E7%9A%84%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">mongoDB的高级查询</a><a class="category-link" href="/categories/mongoDB%E8%B4%A6%E6%88%B7%E6%9D%83%E9%99%90%E9%85%8D%E7%BD%AE/">mongoDB账户权限配置</a><a class="category-link" href="/categories/promise/">promise</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-1/">uniapp基础--1</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-2/">uniapp基础--2</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-3/">uniapp基础--3</a><a class="category-link" href="/categories/uniapp%E5%9F%BA%E7%A1%80-4/">uniapp基础--4</a><a class="category-link" href="/categories/vue%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95-%E9%80%80%E5%87%BA/">vue实现登录/退出</a><a class="category-link" href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">作用域和作用域链</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84wxss/">小程序的wxss</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/">小程序的事件绑定</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">小程序的生命周期</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E4%BB%B6/">小程序的组件</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/">小程序的自定义组件</a><a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6/">小程序的表单组件</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">微信小程序基础</a><a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/">微信小程序的模板语法</a><a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/">移动端布局</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ajax/" style="font-size: 10px;">$.ajax()</a> <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/H5%E3%80%81CSS3/" style="font-size: 11.43px;">H5、CSS3</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/async%E3%80%81await/" style="font-size: 10px;">async、await</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/fetch/" style="font-size: 10px;">fetch</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 18.57px;">js基础</a> <a href="/tags/js%E9%AB%98%E7%BA%A7/" style="font-size: 10px;">js高级</a> <a href="/tags/mongoDB/" style="font-size: 15.71px;">mongoDB</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/uniapp/" style="font-size: 14.29px;">uniapp</a> <a href="/tags/vue/" style="font-size: 17.14px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 20px;">微信小程序</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" style="font-size: 10px;">移动端布局</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>档案</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ajax/" style="font-size: 10px;">$.ajax()</a> <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CORS%E8%B7%A8%E5%9F%9F/" style="font-size: 10px;">CORS跨域</a> <a href="/tags/H5%E3%80%81CSS3/" style="font-size: 11.43px;">H5、CSS3</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/async%E3%80%81await/" style="font-size: 10px;">async、await</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/fetch/" style="font-size: 10px;">fetch</a> <a href="/tags/hexo%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">hexo框架</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 18.57px;">js基础</a> <a href="/tags/js%E9%AB%98%E7%BA%A7/" style="font-size: 10px;">js高级</a> <a href="/tags/mongoDB/" style="font-size: 15.71px;">mongoDB</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/uniapp/" style="font-size: 14.29px;">uniapp</a> <a href="/tags/vue/" style="font-size: 17.14px;">vue</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 20px;">微信小程序</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80/" style="font-size: 10px;">移动端布局</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
